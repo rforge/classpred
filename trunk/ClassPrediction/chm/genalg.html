@@ -1,0 +1,78 @@
+<html><head><title>Running genetic algorithm to select features</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>genalg(ClassDiscovery)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   genalg">
+<param name="keyword" value="R:   newGeneration">
+<param name="keyword" value=" Running genetic algorithm to select features">
+</object>
+
+
+<h2>Running genetic algorithm to select features</h2>
+
+
+<h3>Usage</h3>
+
+<pre>
+genalg(data, fitfun, mutfun, context, pm = 0.001, pc = 0.5, gen = 1)
+newGeneration(ga)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+</td></tr>
+<tr valign="top"><td><code>fitfun</code></td>
+<td>
+</td></tr>
+<tr valign="top"><td><code>mutfun</code></td>
+<td>
+</td></tr>
+<tr valign="top"><td><code>context</code></td>
+<td>
+</td></tr>
+<tr valign="top"><td><code>pm</code></td>
+<td>
+</td></tr>
+<tr valign="top"><td><code>pc</code></td>
+<td>
+</td></tr>
+<tr valign="top"><td><code>gen</code></td>
+<td>
+</td></tr>
+<tr valign="top"><td><code>ga</code></td>
+<td>
+</td></tr>
+</table>
+
+<h3>Examples</h3>
+
+<pre>
+##---- Should be DIRECTLY executable !! ----
+##-- ==&gt;  Define data, use random,
+##--    or do  help(data=index)  for the standard data sets.
+
+## The function is currently defined as
+function(data, fitfun, mutfun, context, pm=0.001, pc=0.50, gen=1) {
+  fitness &lt;- apply(data, 1, fitfun, context=context)
+  best.fit &lt;- max(fitness)
+  cheat &lt;- (1:length(fitness))[fitness==best.fit][1]
+  b1 &lt;- as.matrix(data[cheat,])
+  new("genalg",
+      data=data, fitfun=fitfun, mutfun=mutfun, p.mutation=pm,
+      p.crossover=pc, generation=gen, fitness=fitness,
+      best.fit=best.fit, best.individual=b1, context=context)
+  }
+</pre>
+
+
+
+<hr><div align="center">[Package <em>ClassDiscovery</em> version 2.9.0 <a href="00Index.html">Index</a>]</div>
+
+</body></html>

@@ -1,0 +1,18 @@
+# various generics
+import(methods)
+importMethodsFrom(PreProcess,
+                  "hist", "image", "plot")
+importMethodsFrom(PreProcess,
+                  "print", "summary", "as.data.frame")
+
+exportMethods("hist", "image", "plot")
+exportMethods("summary", "as.data.frame", "as.matrix")
+
+# cp00-utility
+export("maha")
+
+# cp01-genalg
+#export("crossover", "selectPair", "removeDuplicates")
+exportClasses("genalg")
+export("genalg", "newGeneration")
+export("simpleMutate", "selectionFitness", "selectionMutate")
