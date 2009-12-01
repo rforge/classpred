@@ -9,10 +9,14 @@ exportMethods("hist", "image", "plot")
 exportMethods("summary", "as.data.frame", "as.matrix")
 
 # cp00-utility
-export("maha")
+export("maha", "balancedSplit")
 
 # cp01-genalg
 #export("crossover", "selectPair", "removeDuplicates")
 exportClasses("genalg")
 export("genalg", "newGeneration")
 export("simpleMutate", "selectionFitness", "selectionMutate")
+
+# cp02-fittedModel
+
+# cp03-xval
