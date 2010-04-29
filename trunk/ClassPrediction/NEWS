@@ -10,6 +10,10 @@
 
 NEW FEATURES
 
+    o	Converted ClassPrediction into a light-weight "bundle", with
+        all of the actual work being done in the classes on which it
+        'Depends'. 
+
     o	Added classes for cross-validation.
 
     o	Checked compatibility with R 2.10.0.

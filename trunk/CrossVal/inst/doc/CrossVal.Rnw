@@ -1,0 +1,31 @@
+%\VignetteIndexEntry{CrossVal}
+%\VignetteKeywords{Cross Validation,Class Prediction}
+%\VignetteDepends{CrossVal}
+%\VignettePackage{CrossVal}
+\documentclass{article}
+
+\usepackage{hyperref}
+
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8in}
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+
+\newcommand{\Rfunction}[1]{{\texttt{#1}}}
+\newcommand{\Robject}[1]{{\texttt{#1}}}
+\newcommand{\Rclass}[1]{{\texttt{#1}}}
+\newcommand{\Rpackage}[1]{{\textit{#1}}}
+
+\title{Crosss Validation of Class Predictions}
+\author{Kevin R. Coombes}
+
+\begin{document}
+
+\setkeys{Gin}{width=6.5in}
+\maketitle
+\tableofcontents
+
+\section{Introduction}
+
+\end{document}

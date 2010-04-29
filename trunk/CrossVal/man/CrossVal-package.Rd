@@ -1,0 +1,83 @@
+\name{CrossVal-package}
+\alias{CrossVal-package}
+\docType{package}
+\title{
+Cross validation of high-throughput prediction algorithms
+}
+\description{
+  The \code{CrossVal} package provides generic tools for performing
+  cross-validation on classificaiton methods in the context of
+  high-throughput data sets such as those produced by gene expression
+  microarrays.  In order to use a classifier with this implementaiton of
+  cross-validation, you must first prepare a pair of functions (one for
+  learning models from training data, and one for making predictions on
+  test data).  These functions, along with any required meta-parameters,
+  are used to create an object of the \code{\link{Modeler-class}}.  that
+  object is then passed to the \code{\link{CrossVal}} function along
+  with the full training data set.  The full data set is then repeatedly
+  split into its own training and test sets; you can specify the
+  fractiojn to be used for training and the number of iterations. The
+  result is a detailed look at the accuracy, sensitivity, specificity,
+  and positive and negative predictive value of the model, as estiamted
+  by cross-validation.
+}
+\details{
+\tabular{ll}{
+Package: \tab CrossVal\cr
+Type: \tab Package\cr
+Version: \tab 1.0\cr
+Date: \tab 2010-01-04\cr
+License: \tab What license is it under?\cr
+LazyLoad: \tab yes\cr
+}
+}
+\author{
+Kevin R. Coombes :kcoombnes@mdanderson.org>
+
+Maintainer: Kevin R. Coombes :kcoombnes@mdanderson.org>
+}
+\references{
+  Braga-Neto U, Dougherty ER. Is cross-validation valid for small-sample
+  microarray classification? \emph{Bioinfrmatics}, 2004; \bold{20}:374--380.
+
+  Jiang W, Varma S, Simon R. Calculating confidence intervals for
+  prediction error in microarray classification using resampling.
+  \emph{Stat Appl Genet Mol Biol}. 2008; \bold{7}:Article8.
+
+  Fu LM, Youn ES.  Improving reliability of gene selection from
+  microarray functional genomics data.  \emph{IEEE Trans Inf Technol
+    Biomed}. 2003; \bold{7}:191--6.
+
+  Man MZ, Dyson G, Johnson K, Liao B.  Evaluating methods for
+  classifying expression data.  \emph{J Biopharm Stat}. 2004;
+  \bold{14}:1065--84.
+
+  Fu WJ, Carroll RJ, Wang S.  Estimating misclassification error with
+  small samples via bootstrap cross-validation.  \emph{Bioinformatics}.
+  2005; \bold{21}:1979--86.
+
+  Ancona N, Maglietta R, Piepoli A, D'Addabbo A, Cotugno R, Savino M,
+  Liuni S, Carella M, Pesole G, Perri F.  On the statistical assessment
+  of classifiers using DNA microarray data.  \emph{BMC Bioinformatics}.
+  2006; \bold{7}:387.
+
+  Lecocke M, Hess K.  An empirical study of univariate and genetic
+  algorithm-based feature selection in binary classification with
+  microarray data.  \emph{Cancer Inform}. 2007; \bold{2}:313--27.
+
+  Lee S.  Mistakes in validating the accuracy of a prediction classifier
+  in high-dimensional but small-sample microarray data.  \emph{Stat
+  Methods Med Res}.  2008; \bold{17}:635--42.
+}
+\keyword{ package }
+\keyword{ classif}
+\keyword{ multivariate }
+\seealso{
+  The following classification methods have been adapted to work within
+  the general cross-validation framework: K nearest neighbors
+  (\code{\link{learnKNN}}), recursive partitioning and regression trees
+  (\code{\link{learnRPART}}), 
+}
+\examples{
+#
+}

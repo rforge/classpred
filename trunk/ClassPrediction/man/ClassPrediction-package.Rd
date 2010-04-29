@@ -4,23 +4,23 @@
 \alias{ClassPrediction}
 \docType{package}
 \title{
-What the package does (short line)
-Provides tools to help with class prediction
+The ClassPrediction Bundle
 }
 \description{
-Provides tools to help with class prediction
+This class provides tools to help with class prediction. In its current
+form, it is a shell used to bundle various other packages that actually
+do all the work.
 }
 \details{
 \tabular{ll}{
 Package: \tab ClassPrediction\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2009-07-27\cr
-License: \tab What license is it under?\cr
+Version: \tab 2.10\cr
+Date: \tab 2010-01-06\cr
+License: \tab Artistic-2.0\cr
 LazyLoad: \tab yes\cr
 }
-~~ An overview of how to use the package, including the most important ~~
-~~ functions ~~
+See the components, \code{\link{GenAlg-class}} and \code{\link{CrossVal-class}}.
 }
 \author{
 Kevin R. Coombes <kcoombes@mdanderson.org>
@@ -28,8 +28,6 @@ Kevin R. Coombes <kcoombes@mdanderson.org>
 Maintainer: Kevin R. Coombes <kcoombes@mdanderson.org>
 }
 \references{
-David Goldberg. "Genetic Algorithms in Search, Optimization and Machine
-Learning," Addison-Wesley, 1989.
 }
 \keyword{ package }
 \keyword{optimize}
@@ -37,7 +35,8 @@ Learning," Addison-Wesley, 1989.
 \keyword{multivariate}
 \keyword{classif}
 \seealso{
+  \code{\link{GenAlg-class}}, \code{\link{CrossVal-class}}.
 }
 \examples{
-# not here yet
+# see the component packages.
 }
