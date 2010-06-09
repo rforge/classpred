@@ -1,5 +1,4 @@
 # various generics
-import(methods)
 importMethodsFrom(methods, "show")
 importMethodsFrom(PreProcess, "summary")
 importMethodsFrom(ClassDiscovery, "predict")
