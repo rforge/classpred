@@ -27,8 +27,6 @@ Kevin R. Coombes <kcoombes@mdanderson.org>
 
 Maintainer: Kevin R. Coombes <kcoombes@mdanderson.org>
 }
-\references{
-}
 \keyword{ package }
 \keyword{optimize}
 \keyword{models}
