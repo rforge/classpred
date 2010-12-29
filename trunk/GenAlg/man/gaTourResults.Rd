@@ -2,6 +2,10 @@
 \Rdversion{1.1}
 \docType{data}
 \alias{gaTourResults}
+\alias{diversity}
+\alias{fitter}
+\alias{meanfit}
+\alias{recurse}
 \title{Results of a Genetic Algorithm}
 \description{
   We ran a genetic algorithm to find the optimal 'fantasy' team for the
