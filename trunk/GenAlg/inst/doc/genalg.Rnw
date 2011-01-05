@@ -132,6 +132,13 @@ the riders, their cost, and total score.
 <<tour>>=
 data(tourData09)
 @ 
+<<foo,eval=FALSE,echo=FALSE>>=
+r <- rownames(tourData09)
+s <- enc2utf8(r)
+rownames(tourData09) <- s
+save(tourData09, file="tourData09.rda")
+rm(r,s)
+@ 
 <<echo=FALSE,results=tex>>=
 require(xtable)
 myalign <- "|l|rrrr|"
