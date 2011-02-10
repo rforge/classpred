@@ -1,1 +1,1 @@
-# does nothing; just exsts as a bundle of other packages
+# does nothing; just exists as a bundle of other packages
