@@ -4,14 +4,15 @@ Date: 2010-12-29
 Title: Classes and methods to use genetic algorithms for feature selection
 Author: Kevin R. Coombes
 Maintainer: Kevin R. Coombes <kcoombes@mdanderson.org>
-biocViews: Microarray, Clustering
 Depends: R (>= 2.10), methods, MASS, oompaBase (>= 2.10), PreProcess (>= 2.10), ClassDiscovery
 Suggests: Biobase, xtable
 Description: This package defines classes and methods that can be used
- to implement genetic algorithms for feature selection.  The idea is
- that we want to select a fixed number of features to combine into a
- linear classifier that can predict a binary outcome, and can use a
- genetic algorithm heuristically to select an optimal set of features.
+  to implement genetic algorithms for feature selection.  The idea is
+  that we want to select a fixed number of features to combine into a
+  linear classifier that can predict a binary outcome, and can use a
+  genetic algorithm heuristically to select an optimal set of features.
 License: Artistic-2.0
-URL: http://bioinformatics.mdanderson.org/Software/OOMPA, http://bioinformatics.mdanderson.org/OOMPA
+LazyLoad: yes
+biocViews: Microarray, Clustering
+URL: http://bioinformatics.mdanderson.org/Software/OOMPA
 
