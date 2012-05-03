@@ -6,7 +6,21 @@
 	**************************************************
 
 
-		CHANGES IN ClassPrediction VERSION 2.10.0
+		CHANGES IN R VERSION 2.10.2
+
+BUG FIXES
+
+    o	Minor documentation updates.
+
+
+		CHANGES IN R VERSION 2.10.1
+
+BUG FIXES
+
+    o	No clue what was changed...
+
+
+		CHANGES IN R VERSION 2.10.0
 
 NEW FEATURES
 
@@ -19,7 +33,14 @@ NEW FEATURES
     o	Checked compatibility with R 2.10.0.
 
 
-		CHANGES IN ClassPrediction VERSION 2.9.0
+	**************************************************
+	*						 *
+	*	       2.9 SERIES NEWS			 *
+	*						 *
+	**************************************************
+
+
+		CHANGES IN R VERSION 2.9.0
 
 NEW FEATURES
 

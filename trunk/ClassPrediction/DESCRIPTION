@@ -1,6 +1,6 @@
 Package: ClassPrediction
-Version: 2.10.1
-Date: 2010-12-29
+Version: 2.10.2
+Date: 2012-05-01
 Title: Classes and methods for "class prediction" with microarrays or proteomics
 Author: Kevin R. Coombes
 Maintainer: Kevin R. Coombes <kcoombes@mdanderson.org>
