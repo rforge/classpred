@@ -44,7 +44,7 @@ Most prediction methods involve (at least) two parts:
 \begin{enumerate}
 \item feature selection: deciding which of the potential predictors
   (features, genes, proteins, etc.) to include in the model
-\item model optimzation: selecting parameters to combine the selected
+\item model optimization: selecting parameters to combine the selected
   features in a model to make predictions.
 \end{enumerate}
 In this vignette, we illustrate the use of a \textit{genetic
@@ -70,7 +70,7 @@ basic idea is that we have a list of features, and we want to select a
 fixed number, $k$, of those features to include in a predictive model.
 Thus, a candidate solution consists of a vector of length $k$
 containing the indices of the features to be included.  The genetic
-algorithm is intialized by creating a \textit{population} of such
+algorithm is initialized by creating a \textit{population} of such
 candidate vectors, and storing it in a \Robject{data} matrix, which is
 passed as the first argument to the \Rfunction{GenAlg} function. After
 supplying all the necessary arguments (as described below) to this
@@ -323,7 +323,7 @@ cyclists are Oscar Freire (cost $= 82$; total = $369$) and Andy
 Schleck (cost $=68$; total = $358$.  Replacing one of the three
 cyclists on the selected team with lower scores than these two riders
 would increase the cost above the cap of $470$, and so no single
-change can improve the score.  We also consider the possibilty of
+change can improve the score.  We also consider the possibility of
 replacing the two lowest scoring cyclists on the best selected team
 with one of these high scorers and one other cyclist.  Since the two
 lowest scoring cyclists have a combined cost of $48+16=64$ and the
@@ -344,7 +344,7 @@ weighted toward sprinters.  Most of the 20 teams in the 2009 tour had
 one sprinter among their nine riders; the fantasy team has five
 sprinters (Hushovd, Cavendish, Ciolek, Rojas, and Farrar) out of nine.
 Second, riders who wear leaders jerseys are valuable.  During the 2009
-tour, three riders wore the ``yellow jersey'' for the overall leade:
+tour, three riders wore the ``yellow jersey'' for the overall leader:
 Fabian Cancellara, Rinaldo Nocentini, and Alberto Contador; two of
 those three are on the best fantasy team.  The 'green jersey'' for
 most consistent rider was shared by Mark Cavendish and Thor Hushovd,
@@ -352,7 +352,7 @@ both on the best fantasy team.  The ``polka dot jersey'' for best
 rider in the mountains was worn for nine stages by Franco Pellizotti.
 The final lesson is to avoid ``breakaway'' specialists in favor of
 riders who can win sprints or place high in the ``general
-classification'' for overlall best time.  Riders who win breakaways
+classification'' for overall best time.  Riders who win breakaways
 are not likely to score well in more than one stage in a tour; that
 does not provide enough points to put them among the overall
 leaders. (The exception here is Rinaldo Nocentini, whose one breakaway
@@ -367,7 +367,7 @@ from this score at about generation $630$, but then comes back.
 Interestingly, however, the mean fitness decreases for a period even
 after the maximum appears to stabilize.  Taken as a whole, this figure
 suggests that neither tracking the maximum nor the mean fitness, by
-themsleves, gives a reliable measure of the convergence of the genetic
+themselves, gives a reliable measure of the convergence of the genetic
 algorithm.  Note, by the way, that simple mutations (which replace one
 feature with another) can have a large effect on the fitness, and thus
 can have a strong influence on the mean.
@@ -392,7 +392,7 @@ fitness per generation.  A scatter plot of these smooth curves is
 displayed in Figure~\ref{smooth}.  This figure suggests that, at about
 generation 800, the best fitness stops changing, while the mean
 fitness continues to increase slowly.  It also suggests that most of
-the gain in finding the optimal solution occured in the first $300$ to
+the gain in finding the optimal solution occurred in the first $300$ to
 $400$ generations.
 <<loess>>=
 n.generations <- length(meanfit)
@@ -412,7 +412,7 @@ text(3450, 2850, "Legend (Generation)")
 text(seq(2900, 4100, length=5), rep(2770, 5), seq(0, 1200, by=300), cex=0.8)
 @ 
 \caption{Relationship between the mean and maximum fitness in a
-  population of potential solutions as the geneerations evolve.  Gray
+  population of potential solutions as the generations evolve.  Gray
   curve tracks the complete fluctuations; colored dots follow the
   smoothed curves, with colors the same as in Figure~\ref{gens}.}
 \label{smooth}
@@ -450,9 +450,9 @@ axis(4, col=mycol, col.ticks=mycol, col.axis=mycol, lwd=2)
 abline(h=c(1, 1.25, 1.5), col="#00ddff")#col="#ff7700")
 par(opar)
 @ 
-\caption{Overaly of the average diversity (color) on plots of the best
+\caption{Overlay of the average diversity (color) on plots of the best
   (black) and mean (gray) fitness through the generations of the
-  genetic algorithm.  Horizontal (cyan) lines are locatyed at a
+  genetic algorithm.  Horizontal (cyan) lines are located at a
   diversity of $1$, $1.25$, and $1.5$.}
 \label{diver}
 \end{figure}
@@ -469,7 +469,7 @@ This strong correlation suggests that we might be able to use the mean
 fitness to draw conclusions about whether the algorithm has converged.
 One reason to prefer the diversity, however, is that it is more
 interpretable.  For instance, we note that the diversity starts in
-genration zero at a value between eight and nine.  This observation
+generation zero at a value between eight and nine.  This observation
 makes sense; two sets of nine riders selected randomly from among the
 $102$ riders who scored points in the 2009 tour challenge should
 almost never have more than one overlap.  At the point where we first
@@ -479,7 +479,7 @@ Howevre, the diversity is near $1.5$ during the period when the best
 solution temporarily drifts away from the optimum.  During the final
 phase, however, the diversity drops below $1.25$ and stays near that
 level, suggesting that this might provide a reasonable criterion for
-convergence.  An additonal measure that might be applied when the
+convergence.  An additional measure that might be applied when the
 diversity starts to fall into this range is to compute the number of
 individuals in the population that are identical to the best solution: 
 <<ident>>=
@@ -488,7 +488,7 @@ temp <- apply(recurse@data, 1, function(x, y) {
 }, recurse@best.individual)
 sum(temp)
 @ 
-In this case, rhe best solution is represented by \Sexpr{sum(temp)}
+In this case, the best solution is represented by \Sexpr{sum(temp)}
 of the \Sexpr{nrow(recurse@data)} individual candidates.
 
 
@@ -497,8 +497,8 @@ of the \Sexpr{nrow(recurse@data)} individual candidates.
 The example presented here has some important implications for
 applying feature selection to develop gene expression signatures to
 predict useful clinical outcomes.  The most significant issues relate
-to the problem of convergence.  The cycling example is likley to be
-easier than the gen epxression problem, since there are only $102$
+to the problem of convergence.  The cycling example is likely to be
+easier than the gen expression problem, since there are only $102$
 ``cycling-features'' (i.e., riders) while there may be several
 thousand gene-features.  In order to search adequately through the
 sample space, we needed a population of $1000$ individuals evolved
@@ -508,14 +508,14 @@ number compared to the $2\times10^{12}$ ways to choose nine riders
 from a list of $102$.)  Unless some preliminary filtering ir performed
 to reduce the number of genes, it will probably take a much larger
 population and many more generations to search through gene-space for
-useful predicitve features.
+useful predictive features.
 
-We do expect, however, that the ``diversity'' wil prove useful to
+We do expect, however, that the ``diversity'' will prove useful to
 monitor convergence even in the gene expression setting.  As mentioned
-earlier, diversity has the advantage fo providing an interpretable
-condition for converence, which doe s not need to know the ``fitness''
+earlier, diversity has the advantage of providing an interpretable
+condition for convergence, which does not need to know the ``fitness''
 of the optimal solution in advance.  By contrast, we know that the
-fitness function must will be different in the gene epxression case
+fitness function must will be different in the gene expression case
 from the fitness function used for the fantasy cycling challenge.  The
 underlying difficulty is that we do not have as clear an objective
 score.  Instead, we can start by considering the problem of selecting
