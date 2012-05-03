@@ -1,21 +1,18 @@
 \name{GenAlg-tools}
-\Rdversion{1.1}
 \alias{GenAlg-tools}
 \alias{simpleMutate}
 \alias{selectionFitness}
 \alias{selectionMutate}
-
 \title{Utility functions for selection and mutation in genetic algorithms}
 \description{
-  These functions implement specific forms of mutation and fiteness
-  that can be used in genetic algortihms for feature selection.
+  These functions implement specific forms of mutation and fitness
+  that can be used in genetic algorithms for feature selection.
 }
 \usage{
 simpleMutate(allele, context)
 selectionMutate(allele, context)
 selectionFitness(arow, context)
 }
-
 \arguments{
   \item{allele}{
     In the \code{simpleMutate} function, \code{allele} is a binary
@@ -37,31 +34,31 @@ selectionFitness(arow, context)
   }
 }
 \details{
-  These functions represent 'callbacks'.  They can be used in the
-  function \code{\link{GenAlg}}, which creates  objects.  They will then
+  These functions represent 'callbacks'. They can be used in the
+  function \code{\link{GenAlg}}, which creates objects. They will then
   be called repeatedly (for each individual in the population) each time
   the genetic algorithm is updated to the next generation.
 
   The \code{simpleMutate} function assumes that chromosomes are binary
-  vectors, so alleles simply take on the value 0 or 1.  A mutation of an
+  vectors, so alleles simply take on the value 0 or 1. A mutation of an
   allele, therefore, flips its state between those two possibilities.
 
   The \code{selectionMutate} and \code{selectionFitness} functions, by
   contrast, are specialized to perform feature selection assuming a
   fixed number K of features, with a goal of learning how to
-  distinguish between two different groups of samples.  We assume that
+  distinguish between two different groups of samples. We assume that
   the underlying data consists of a data frame (or matrix), with the
   rows representing features (such as genes) and the columns
-  representing samples.  In addition, there must be a grouping vector
+  representing samples. In addition, there must be a grouping vector
   (or factor) that assigns all of the sample columns to one of two
-  possible groups.  These data are collected into a list,
+  possible groups. These data are collected into a list,
   \code{context}, containing a \code{dataset} matrix and a \code{gps}
-  factor.  An individual member of the population of potential
+  factor. An individual member of the population of potential
   solutions is encoded as a length K vector of indices into the rows
-  of the \code{dataset}.   An individual \code{allele}, therefore, is a
-  single index identifying a row of the \code{dataset}.  When mutating
+  of the \code{dataset}. An individual \code{allele}, therefore, is a
+  single index identifying a row of the \code{dataset}. When mutating
   it, we assume that it can be changed into any other possible allele;
-  i.e., any other row number.  To compute the fitness, we use the
+  i.e., any other row number. To compute the fitness, we use the
   Mahalanobis distance between the centers of the two groups defined by
   the \code{gps} factor.
 }
@@ -71,14 +68,17 @@ selectionFitness(arow, context)
   The \code{selectionFitness} function returns a real number.
 }
 \references{
-  Coombes KR. Genetic Algorthims, Feature Selection, and the Tour de
-  France. Submitted.
+  Coombes KR.\cr
+  "Genetic Algorithms, Feature Selection, and the Tour de France."\cr
+  (Submitted)
 }
 \author{
-Kevin R. Coombes <kcoombes@mdanderson.org>
+  Kevin R. Coombes \email{kcoombes@mdanderson.org},
+  P. Roebuck \email{proebuck@mdanderson.org}
 }
 \seealso{
-  See also \code{\link{GenAlg}}, \code{\link{GenAlg-class}}, and
+  \code{\link{GenAlg}},
+  \code{\link{GenAlg-class}},
   \code{\link{maha}}.
 }
 \examples{
@@ -104,4 +104,5 @@ my.ga <- GenAlg(y, selectionFitness, selectionMutate, myContext, 0.001, 0.75)
 my.ga <- newGeneration(my.ga)
 
 }
-\keyword{optimize }
+\keyword{optimize}
+
