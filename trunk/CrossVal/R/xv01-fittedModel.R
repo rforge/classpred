@@ -2,6 +2,7 @@
 ### FITTEDMODEL.R
 ###
 
+
 ##=============================================================================
 setClass("FittedModel",
          representation(predict="function",
@@ -9,6 +10,7 @@ setClass("FittedModel",
                         trainStatus="factor",
                         details="list",
                         extras="list"))
+
 
 ##-----------------------------------------------------------------------------
 ## Generates a FittedModel object
