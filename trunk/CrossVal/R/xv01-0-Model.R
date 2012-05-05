@@ -2,11 +2,13 @@
 ### MODELER.R
 ###
 
+
 ##=============================================================================
 setClass("Modeler",
          representation(learn="function",
                         predict="function",
                         params="list"))
+
 
 ##-----------------------------------------------------------------------------
 ## Generates a Modeler object
