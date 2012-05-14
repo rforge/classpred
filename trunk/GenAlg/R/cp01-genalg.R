@@ -1,17 +1,6 @@
-require(methods)
-if (!isGeneric("as.data.frame"))
-  setGeneric("as.data.frame", function (x,
-                                        row.names = NULL,
-                                        optional = FALSE, ...) 
-             standardGeneric("as.data.frame"))
-
-if (!isGeneric("as.matrix"))
-  setGeneric("as.matrix", function (x, ...)
-             standardGeneric("as.matrix"))
-          
-if (!isGeneric("summary"))
-  setGeneric("summary", function(object, ...)
-             standardGeneric("summary"))
+###
+### GENALG.R
+###
 
 
 ########################################################################
@@ -88,16 +77,16 @@ removeDuplicates <- function(arow, mf, context) {
 # critical routine when you iterate the generate algorithm to process several
 # generations.
 setClass("GenAlg",
-         representation=list(data="matrix",
-           fitfun="function",
-           mutfun="function",
-           p.mutation="numeric",
-           p.crossover="numeric",
-           generation="numeric",
-           fitness="numeric",
-           best.fit="numeric",
-           best.individual="matrix",
-           context="list"))
+         representation(data="matrix",
+                        fitfun="function",
+                        mutfun="function",
+                        p.mutation="numeric",
+                        p.crossover="numeric",
+                        generation="numeric",
+                        fitness="numeric",
+                        best.fit="numeric",
+                        best.individual="matrix",
+                        context="list"))
 
 GenAlg <- function(data, fitfun, mutfun, context, pm=0.001, pc=0.50, gen=1) {
   fitness <- apply(data, 1, fitfun, context=context)
@@ -134,7 +123,8 @@ newGeneration <- function(ga) {
          ga@p.mutation, ga@p.crossover, ga@generation+1)
 }
 
-setMethod("summary", "GenAlg", function(object, ...) {
+setMethod("summary", signature(object="GenAlg"),
+          function(object, ...) {
   cat(paste("An object representing generation", object@generation,
             "in a genetic algorithm.\n"))
   cat(paste("Population size:", nrow(object@data), "\n"))
@@ -144,14 +134,16 @@ setMethod("summary", "GenAlg", function(object, ...) {
   print(summary(object@fitness))
 })
 
-setMethod('as.data.frame', 'GenAlg', function(x, row.names = NULL, optional = FALSE, ...) {
+setMethod('as.data.frame', signature(x='GenAlg'),
+          function(x, row.names=NULL, optional=FALSE, ...) {
   val <- data.frame(x@fitness, x@data)
   size <- dim(x@data)[2]
   colnames(val) <- c('Fitness', paste('Feature', 1:size, sep=''))
   val
 })
 
-setMethod("as.matrix", "GenAlg", function(x, ...) {
+setMethod("as.matrix", signature(x="GenAlg"),
+          function(x, ...) {
 	as.matrix(as.data.frame(x))
 })
 
