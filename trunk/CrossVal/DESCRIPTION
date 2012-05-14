@@ -1,6 +1,6 @@
 Package: CrossVal
-Version: 1.0.0
-Date: 2010-01-04
+Version: 1.0.1
+Date: 2012-05-04
 Title: Classes and methods for cross validation of "class prediction" with microarrays or proteomics
 Author: Kevin R. Coombes
 Maintainer: Kevin R. Coombes <kcoombes@mdanderson.org>

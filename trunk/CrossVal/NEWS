@@ -6,14 +6,18 @@
 	**************************************************
 
 
-		CHANGES IN CrossVal VERSION 1.0.0
+		CHANGES IN R VERSION 1.0.1
+
+BUG FIXES
+
+    o	Documentation updates.
+
+
+		CHANGES IN R VERSION 1.0.0
 
 NEW FEATURES
 
     o	Brand new packaging: split out from the ClassPrediction
     package, which is being restructured as a poor man's bundle
-    (i.e., no code, just some "dependes" rules).
-
-
-
+    (i.e., no code, just some "depends" rules).
 
