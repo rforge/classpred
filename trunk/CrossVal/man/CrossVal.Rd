@@ -1,8 +1,6 @@
 \name{CrossVal}
 \alias{CrossVal}
-\title{
-Creating CrossVal objects
-}
+\title{Creating CrossVal objects}
 \description{
   Given a model classifier and a data set, this function performs
   cross-valiadtion by repeatedly splitting the data into training and
@@ -10,7 +8,7 @@ Creating CrossVal objects
   classifer on new data.
 }
 \usage{
-CrossVal(model, data, status, frac, nLoop, verbose = TRUE)
+CrossVal(model, data, status, frac, nLoop, verbose=TRUE)
 }
 \arguments{
   \item{model}{
@@ -36,17 +34,17 @@ CrossVal(model, data, status, frac, nLoop, verbose = TRUE)
   The \code{CrossVal} package provides generic tools for performing
   cross-validation on classificaiton methods in the context of
   high-throughput data sets such as those produced by gene expression
-  microarrays.  In order to use a classifier with this implementaiton of
+  microarrays. In order to use a classifier with this implementaiton of
   cross-validation, you must first prepare a pair of functions (one for
   learning models from training data, and one for making predictions on
-  test data).  These functions, along with any required meta-parameters,
-  are used to create an object of the \code{\link{Modeler-class}}.  that
+  test data). These functions, along with any required meta-parameters,
+  are used to create an object of the \code{\link{Modeler-class}}. That
   object is then passed to the \code{\link{CrossVal}} function along
-  with the full training data set.  The full data set is then repeatedly
+  with the full training data set. The full data set is then repeatedly
   split into its own training and test sets; you can specify the
-  fractiojn to be used for training and the number of iterations. The
+  fraction to be used for training and the number of iterations. The
   result is a detailed look at the accuracy, sensitivity, specificity,
-  and positive and negative predictive value of the model, as estiamted
+  and positive and negative predictive value of the model, as estimated
   by cross-validation.
 }
 \value{
@@ -57,7 +55,7 @@ CrossVal(model, data, status, frac, nLoop, verbose = TRUE)
   of related references.
 }
 \author{
-  Kevin R. Coombes <krcoombes@mdanderson.org>
+  Kevin R. Coombes \email{krcoombes@mdanderson.org}
 }
 \seealso{
   See the manual page for the \code{\link{CrossVal-package}} for a list
