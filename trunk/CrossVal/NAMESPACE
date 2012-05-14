@@ -1,23 +1,31 @@
-# various generics
+###
+### NAMESPACE
+###
+
+## various generics
 importMethodsFrom(methods, "show")
 importMethodsFrom(PreProcess, "summary")
 importMethodsFrom(ClassDiscovery, "predict")
 
 exportMethods("show", "summary", "predict")
 
-# xv00-utility
+## xv00-utility
 export("balancedSplit")
 
-# xv01-fittedModel
-exportClasses("Modeler", "FittedModel")
-export("Modeler", "FittedModel") # constructors
+## xv01-0-Model
+exportClasses("Modeler")
+export("Modeler") # generator
 export("learn")
 
-# xv02-xval
-exportClasses("CrossVal", "CrossValSummary")
-export("CrossVal")
+## xv01-1-FittedModel
+exportClasses("FittedModel")
+export("FittedModel") # generator
 
-# xv03-utility
+## xv02-CrossVal
+exportClasses("CrossVal", "CrossValSummary")
+export("CrossVal") # generator
+
+## xv03-utility
 export("learnPCALR", "predictPCALR",
        "learnRPART", "predictRPART",
        "learnLR", "predictLR",
@@ -25,3 +33,4 @@ export("learnPCALR", "predictPCALR",
        "learnTailRank", "predictTailRank",
        "learnKNN", "predictKNN",
        "learnCCP", "predictCCP")
+
