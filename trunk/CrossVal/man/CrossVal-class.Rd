@@ -1,11 +1,11 @@
 \name{CrossVal-class}
-\Rdversion{1.1}
-\docType{class}
 \alias{CrossVal-class}
 \alias{summary,CrossVal-method}
-
+\docType{class}
 \title{Class "CrossVal"}
-\description{	 ~~ A concise (1-5 lines) description of what the class is.  ~~}
+\description{
+  ~~ A concise (1-5 lines) description of what the class is.  ~~
+}
 \section{Objects from the Class}{
 Objects can be created by calls to the constructor function, \code{\link{CrossVal}}.
 }
@@ -41,3 +41,4 @@ Objects can be created by calls to the constructor function, \code{\link{CrossVa
 showClass("CrossVal")
 }
 \keyword{classes}
+
