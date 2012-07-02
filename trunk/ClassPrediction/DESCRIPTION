@@ -4,7 +4,7 @@ Date: 2012-05-01
 Title: Classes and methods for "class prediction" with microarrays or proteomics
 Author: Kevin R. Coombes
 Maintainer: Kevin R. Coombes <kcoombes@mdanderson.org>
-Depends: R (>= 2.10), GenAlg (>= 1.0), CrossVal (>= 1.0)
+Depends: R (>= 2.10), GenAlgo (>= 1.0), CrossVal (>= 1.0)
 Suggests: Biobase
 Description: This package bundles the classes and pacakges used to
   help with "class prediction" problems in the OOMPA project.  Class
