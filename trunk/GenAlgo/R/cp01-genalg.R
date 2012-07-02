@@ -154,7 +154,7 @@ popDiv <- function(x) {
   ndiff <- 0
   for (i in 1:(N-1)) {
     more <- sapply((i+1):N, function(j) {
-      length(.Internal(unique(c(x[i,], x[j,]), FALSE, FALSE))) - ncol(x)
+      length(unique(c(x[i,], x[j,]))) - ncol(x)
     })
     ndiff <- ndiff+sum(more)
   }
