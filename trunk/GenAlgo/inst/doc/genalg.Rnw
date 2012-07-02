@@ -1,7 +1,7 @@
-%\VignetteIndexEntry{OOMPA GenAlg}
+%\VignetteIndexEntry{OOMPA GenAlgo}
 %\VignetteKeywords{OOMPA,Class Prediction,Genetic Algorithm}
-%\VignetteDepends{xtable,ClassDiscovery,GenAlg}
-%\VignettePackage{GenAlg}
+%\VignetteDepends{xtable,ClassDiscovery,GenAlgo}
+%\VignettePackage{GenAlgo}
 \documentclass{article}
 
 \usepackage{hyperref}
