@@ -1,3 +1,5 @@
+# Copyright (C) Kevin R. Coombes, 2007-2012
+
 # This routine computes the Mahalanobis distance between the centers of
 # two groups. We sometimes use this as the fitness function in our genetic
 # algorithm.
