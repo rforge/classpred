@@ -55,7 +55,7 @@ In this vignette, we illustrate the use of a \textit{genetic
 No one will be surprised to learn that we start by loading the package
 into the current R session:
 <<lib>>=
-library(GenAlg)
+library(GenAlgo)
 @ 
 We also use some plotting routines from the \Rpackage{ClassDiscovery}
 package. 
