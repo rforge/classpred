@@ -1,5 +1,5 @@
-\name{GenAlg}
-\alias{GenAlg}
+\name{GenAlgo}
+\alias{GenAlgo}
 \alias{newGeneration}
 \alias{popDiversity}
 \title{

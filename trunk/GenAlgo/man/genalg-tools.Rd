@@ -1,5 +1,5 @@
-\name{GenAlg-tools}
-\alias{GenAlg-tools}
+\name{GenAlgo-tools}
+\alias{GenAlgo-tools}
 \alias{simpleMutate}
 \alias{selectionFitness}
 \alias{selectionMutate}
