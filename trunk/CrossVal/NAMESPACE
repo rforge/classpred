@@ -5,32 +5,14 @@
 ## various generics
 importMethodsFrom(methods, "show")
 importMethodsFrom(PreProcess, "summary")
-importMethodsFrom(ClassDiscovery, "predict")
 
-exportMethods("show", "summary", "predict")
+exportMethods("show", "summary")
 
 ## xv00-utility
 export("balancedSplit")
-
-## xv01-0-Model
-exportClasses("Modeler")
-export("Modeler") # generator
-export("learn")
-
-## xv01-1-FittedModel
-exportClasses("FittedModel")
-export("FittedModel") # generator
 
 ## xv02-CrossVal
 exportClasses("CrossVal", "CrossValSummary")
 export("CrossVal") # generator
 
-## xv03-utility
-export("learnPCALR", "predictPCALR",
-       "learnRPART", "predictRPART",
-       "learnLR", "predictLR",
-       "learnSelectedLR", "predictSelectedLR",
-       "learnTailRank", "predictTailRank",
-       "learnKNN", "predictKNN",
-       "learnCCP", "predictCCP")
 
