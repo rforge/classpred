@@ -1,10 +1,10 @@
 Package: GenAlgo
-Version: 1.0.3
-Date: 2012-07-01
+Version: 2.0.0
+Date: 2013-07-05
 Title: Classes and methods to use genetic algorithms for feature selection
 Author: Kevin R. Coombes
 Maintainer: Kevin R. Coombes <kcoombes@mdanderson.org>
-Depends: R (>= 2.10), methods, MASS, oompaBase (>= 2.10), PreProcess (>= 2.10), ClassDiscovery
+Depends: R (>= 2.10), methods, MASS, oompaBase (>= 3.0.1), ClassDiscovery
 Suggests: Biobase, xtable
 Description: This package defines classes and methods that can be used
   to implement genetic algorithms for feature selection.  The idea is
