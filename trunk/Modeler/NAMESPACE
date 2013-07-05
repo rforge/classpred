@@ -1,0 +1,28 @@
+# Copyright (C) Kevin R. Coombes, 2007-2013.
+
+###
+### NAMESPACE
+###
+
+## various generics
+importMethodsFrom(ClassDiscovery, "predict")
+
+exportMethods("predict")
+
+## m01-Model
+exportClasses("Modeler")
+export("Modeler") # generator
+export("learn")
+
+## m02-FittedModel
+exportClasses("FittedModel")
+export("FittedModel") # generator
+
+## m03-predictors
+export("learnPCALR", "predictPCALR",
+       "learnRPART", "predictRPART",
+       "learnLR", "predictLR",
+       "learnSelectedLR", "predictSelectedLR",
+       "learnTailRank", "predictTailRank",
+       "learnKNN", "predictKNN",
+       "learnCCP", "predictCCP")

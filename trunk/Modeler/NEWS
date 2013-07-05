@@ -1,0 +1,15 @@
+			Dear Emacs, please make this -*-Text-*- mode!
+	**************************************************
+	*						 *
+	*	       1.0 SERIES NEWS			 *
+	*						 *
+	**************************************************
+
+
+NEW FEATURES
+
+    o	Brand new packaging: split out from the CrossVal
+    package. Contains the generic support to "learn" and "predict".
+    Also contains the base implementations of numerous statistical
+    models for classification or regression.
+
