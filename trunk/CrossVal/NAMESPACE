@@ -4,7 +4,7 @@
 
 ## various generics
 importMethodsFrom(methods, "show")
-importMethodsFrom(PreProcess, "summary")
+importMethodsFrom(oompaBase, "summary")
 
 exportMethods("show", "summary")
 
