@@ -1,6 +1,8 @@
 \name{learnKNN}
 \alias{learnKNN}
 \alias{predictKNN}
+\alias{modeler3NN}
+\alias{modeler5NN}
 \title{
   Fit models and make predictions with a KNN classifier
 }

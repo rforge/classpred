@@ -1,6 +1,7 @@
 \name{learnPCALR}
 \alias{learnPCALR}
 \alias{predictPCALR}
+\alias{modelerPCALR}
 \title{
   Fit models and make predictions with a PCA-LR classifier
 }

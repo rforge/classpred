@@ -1,6 +1,6 @@
 Package: Modeler
-Version: 2.0.0
-Date: 2013-07-05
+Version: 2.1.0
+Date: 2013-07-09
 Title: Classes and methods for training and using binary prediction models
 Author: Kevin R. Coombes
 Maintainer: Kevin R. Coombes <kcoombes@mdanderson.org>

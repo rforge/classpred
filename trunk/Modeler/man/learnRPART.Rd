@@ -1,6 +1,7 @@
 \name{learnRPART}
 \alias{learnRPART}
 \alias{predictRPART}
+\alias{modelerRPART}
 \title{
   Fit models and make predictions with a PCA-LR classifier
 }

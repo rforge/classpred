@@ -1,6 +1,7 @@
 \name{learnLR}
 \alias{learnLR}
 \alias{predictLR}
+\alias{modelerLR}
 \title{
   Fit models and make predictions with a logistic regression classifier
 }

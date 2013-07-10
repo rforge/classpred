@@ -1,6 +1,7 @@
 \name{learnSelectedLR}
 \alias{learnSelectedLR}
 \alias{predictSelectedLR}
+\alias{modelerSelectedLR}
 \title{
   Fit models and make predictions with a PCA-LR classifier
 }

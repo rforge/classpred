@@ -1,6 +1,7 @@
 \name{learnCCP}
 \alias{learnCCP}
 \alias{predictCCP}
+\alias{modelerCCP}
 \title{
   Fit models and make predictions with a PCA-LR classifier
 }

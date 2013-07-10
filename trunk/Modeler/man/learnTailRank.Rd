@@ -1,6 +1,7 @@
 \name{learnTailRank}
 \alias{learnTailRank}
 \alias{predictTailRank}
+\alias{modelerTailRank}
 \title{
   Fit models and make predictions with a PCA-LR classifier
 }

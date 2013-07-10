@@ -19,10 +19,10 @@ exportClasses("FittedModel")
 export("FittedModel") # generator
 
 ## m03-predictors
-export("learnPCALR", "predictPCALR",
-       "learnRPART", "predictRPART",
-       "learnLR", "predictLR",
-       "learnSelectedLR", "predictSelectedLR",
-       "learnTailRank", "predictTailRank",
-       "learnKNN", "predictKNN",
-       "learnCCP", "predictCCP")
+export("modelerPCALR", "learnPCALR", "predictPCALR",
+       "modelerRPART", "learnRPART", "predictRPART",
+       "modelerLR", "learnLR", "predictLR",
+       "modelerSelectedLR", "learnSelectedLR", "predictSelectedLR",
+       "modelerTailRank", "learnTailRank", "predictTailRank",
+       "modeler3NN", "modeler5NN", "learnKNN", "predictKNN",
+       "modelerCCP", "learnCCP", "predictCCP")

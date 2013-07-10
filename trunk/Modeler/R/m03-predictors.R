@@ -33,6 +33,8 @@ predictLR <- function(newdata, details, status, type="response", ...) {
   preds
 }
 
+modelerLR <- Modeler(learnLR, predictLR)
+
 # PCALR, do principal components analysis first,
 # followed by linear or logistic regression
 #
@@ -95,29 +97,10 @@ predictPCALR <- function(newdata, details, status, ...) {
   # the values of the predictors in the test set
   proj <- predict(details$spca, newdata=newdata[details$sel,])
   temp <- data.frame(proj)[, 1:details$nCompAvail]
-#  preds <- predict(details$mmod, newdata=temp, type='response')
-#  values <- rep(levels(status)[2], length(preds))
-#  values[preds < details$prior] <- levels(status)[1]
-#  factor(values)
   predict(details$baseModel, temp, ...)
 } 
 
-learnRPART <- function(data, status, params, pfun) {
-  require(rpart)
-  tda <- data.frame(status, t(data))
-#  rp <- rpart(status ~ ., data=tda, method="class", control=params)
-  rp <- rpart(status ~ ., data=tda, control=params)
-  fm <- FittedModel(pfun, data, status,
-                    details=list(rp=rp))
-}
-
-predictRPART <- function(newdata, details, status, ...) {
-  nd <- data.frame(t(newdata))
-#  predict(details$rp, newdata=nd, type='class')
-  predict(details$rp, newdata=nd, ...)
-}
-
-
+modelerPCALR <- Modeler(learnPCALR, predictPCALR)
 
 learnSelectedLR <- function(data, status, params, pfun) {
   require(ClassComparison)
@@ -171,90 +154,4 @@ predictSelectedLR <- function(newdata, details, status, ...) {
   factor(values)
 } 
 
-learnTailRank <- function(data, status, params, pfun) {
-  if (is.null(params$spec)) {
-    params$spec <- 0.8
-  }
-  if (is.null(params$conf)) {
-    params$conf <- 0.9
-  }  
-  require(TailRank)
-  tr <- TailRankTest(data, status, specificity=params$spec,
-                     confidence=params$conf, direction="two")
-  summary(tr)
-  
-  tdata <- data.frame(Stat=status, t(data))
-  model <- step(glm(Stat ~ ., data=tdata, family=binomial), trace=0)
-  FittedModel(pfun, data, status, details=list(model=model, prior=params$prior))
-}
-
-predictTailRank <- function(newdata, details, status, ...) {
-  preds <- predict(details$model, newdata=data.frame(t(newdata)), type='response')
-  values <- rep(levels(status)[2], length(preds))
-  values[preds < details$prior] <- levels(status)[1]
-  values
-}
-
-learnKNN <- function(data, status, params, pfun) {
-  k <- ifelse(is.null(params$k), 3, params$k)
-  fm <- FittedModel(pfun, data, status,
-                    details=list(train=data, status=status, k=k))
-}
-
-predictKNN <- function(newdata, details, status, ...) {
-  require(class)
-  data <- details$train
-  k <- details$k
-  status <- details$status
-  knn(t(data), t(newdata), status, k=k)
-}
-
-learnCCP <- function(data, status, params, pfun) {
-  norm.t <- MultiTtest(data, status) #$
-  ccp <- matrix(norm.t@t.statistics, nrow=1) %*% data
-  temp <- sapply(levels(status), function(f) {mean(ccp[status==f])})
-  cutpoint <- mean(temp)
-  FittedModel(pfun, data, status,
-              details=list(norm.t=norm.t, ccp=ccp,
-                cutpoint=cutpoint, big=which(temp==max(temp))))
-}
-
-predictCCP <- function(newdata, details, status, ...) {
-  new.ccp <- matrix(details$norm.t@t.statistics, nrow=1) %*% newdata
-  big <- details$big # must be 1 or 2
-  # implies 3-big = 2 or 1
-  pred <- rep(levels(status)[3-big], length(new.ccp))
-  pred[new.ccp > details$cutpoint] <- levels(status)[big]
-  factor(pred)
-}
-
-if (FALSE) {
-  kmod <- Modeler(learnPCALR, predictPCALR, minNGenes=10, alpha=0.10, perVar=0.80)
-  data <- matrix(rnorm(100*20), ncol=20)
-  status <- factor(rep(c("A", "B"), each=10))
-
-  fm <- learn(kmod, data, status)
-  predict(fm)
-
-  newdata <- matrix(rnorm(100*30), ncol=30)
-  summary(predict(fm, newdata))
-
-  rpartmod <- Modeler(learnRPART, predictRPART, minsplit=2, minbucket=1)
-  fm2 <- learn(rpartmod, data, status)
-  predict(fm2)
-  summary(predict(fm2, newdata))
-  
-  lrmod <- Modeler(learnLR, predictLR, prior=0.5)
-  fm3 <- learn(lrmod, data, status)
-  predict(fm3)
-  summary(predict(fm3, newdata))
-  
-  data <- matrix(rnorm(500*100), ncol=100)
-  status <- factor(rep(c("A", "B"), each=50))
-
-  xv <- XVal(kmod, data, status, frac=0.6, nLoop=5)
-  x <- summary(xv)
-  print(x)
-}
-
-
+modelerSelectedLR <- Modeler(learnSelectedLR, predictSelectedLR)
