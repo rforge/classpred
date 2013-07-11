@@ -291,5 +291,76 @@ ccpPredictions <- predict(ccpFitted, testSubset)
 table(ccpPredictions, testClass)
 @ 
 
+\subsection{Support Vector Machines}
+
+Classification
+<<svm>>=
+# takes too long for the vignette, because of the "step"
+# across glm fits.
+svmFitted <- learn(modelerSVM, trainSubset, trainClass)
+svmPredictions <- predict(svmFitted, testSubset)
+table(svmPredictions, testClass)
+@ 
+
+Regression
+<<svm.reg>>=
+svmFitted <- learn(modelerSVM, trainSubset, trainOutcome)
+svmPredictions <- predict(svmFitted, testSubset)
+table(svmPredictions > 0, testClass)
+cor(svmPredictions, testOutcome)
+temp <- lm(testOutcome ~ svmPredictions)
+@ 
+
+<<fig=TRUE,echo=FALSE>>=
+plot(svmPredictions, testOutcome)
+abline(coef(temp))
+@ 
+
+\subsection{Neural Networks}
+
+Classification
+<<nnet>>=
+nnetFitted <- learn(modelerNNET, trainSubset, trainClass)
+nnetPredictions <- predict(nnetFitted, testSubset)
+table(nnetPredictions, testClass)
+@ 
+
+Regression
+<<nnet.reg>>=
+nnetFitted <- learn(modelerNNET, trainSubset, trainOutcome)
+nnetPredictions <- predict(nnetFitted, testSubset)
+table(nnetPredictions > 0, testClass)
+cor(nnetPredictions, testOutcome)
+temp <- lm(testOutcome ~ nnetPredictions)
+@ 
+
+<<fig=TRUE,echo=FALSE>>=
+plot(nnetPredictions, testOutcome)
+#abline(coef(temp))
+@ 
+
+\subsection{Random Forests}
+
+Classification
+<<rf>>=
+rfFitted <- learn(modelerRF, trainSubset, trainClass)
+rfPredictions <- predict(rfFitted, testSubset)
+table(rfPredictions, testClass)
+@ 
+
+Regression
+<<rf.reg>>=
+rfFitted <- learn(modelerRF, trainSubset, trainOutcome)
+rfPredictions <- predict(rfFitted, testSubset)
+table(rfPredictions > 0, testClass)
+cor(rfPredictions, testOutcome)
+temp <- lm(testOutcome ~ rfPredictions)
+@ 
+
+<<fig=TRUE,echo=FALSE>>=
+plot(rfPredictions, testOutcome)
+abline(coef(temp))
+@ 
+
 
 \end{document}

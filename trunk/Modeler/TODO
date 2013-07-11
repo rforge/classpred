@@ -9,3 +9,5 @@ Add a real vignette.
 
 Update the manual pages, since some of them suffer from
 copy-and-paste-itis.
+
+Add more methods: LDA, QDA, PAMR, RDA, SuperPC ?

@@ -6,6 +6,15 @@
 	**************************************************
 
 
+		CHANGES IN R VERSION 2.2.0
+
+NEW FEATURES
+
+    o	Added objects and functions for the following methods: support
+        vector machines (SVM), neual networks (NNET), and random
+        forests (RF).
+
+
 		CHANGES IN R VERSION 2.1.0
 
 DEPRECATED

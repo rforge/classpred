@@ -25,4 +25,8 @@ export("modelerPCALR", "learnPCALR", "predictPCALR",
        "modelerSelectedLR", "learnSelectedLR", "predictSelectedLR",
        "modelerTailRank", "learnTailRank", "predictTailRank",
        "modeler3NN", "modeler5NN", "learnKNN", "predictKNN",
-       "modelerCCP", "learnCCP", "predictCCP")
+       "modelerCCP", "learnCCP", "predictCCP",
+       "modelerRF", "learnRF", "predictRF",
+       "modelerNNET", "learnNNET", "predictNNET",
+       "modelerSVM", "learnSVM", "predictSVM"
+       )
