@@ -24,7 +24,7 @@ DEPRECATED
         already combines each pair.  The old functions still exist,
         but are planned to be removed from the namespace in a future
         version.  If you need to call them directly, then you should
-        fully qualify them with te class name (e.g.,
+        fully qualify them with the class name (e.g.,
         Modeler:::learnLR). 
 
 
