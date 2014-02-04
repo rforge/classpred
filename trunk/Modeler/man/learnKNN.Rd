@@ -68,7 +68,7 @@ predictKNN(newdata, details, status, ...)
   Statistics with S}. Fourth edition.  Springer.
 }
 \author{
-  Kevin R. Coombes <kcoombes@mdanderson.org>
+  Kevin R. Coombes <krc@silicovore.com>
 }
 \seealso{
   See \code{\link{Modeler-class}} and \code{\link{Modeler}} for details

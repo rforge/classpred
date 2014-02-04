@@ -7,7 +7,6 @@ learnKNN <- function(data, status, params, pfun) {
 }
 
 predictKNN <- function(newdata, details, status, ...) {
-  require(class)
   data <- details$train
   k <- details$k
   status <- details$status

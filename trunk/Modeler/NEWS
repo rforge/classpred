@@ -6,6 +6,13 @@
 	**************************************************
 
 
+		CHANGES IN R VERSION 2.2.1
+
+BUG FIXES
+
+    o	Made compatible with new R check steps that verify DESCRIPTION
+        and NAMESPACE dependencies.
+
 		CHANGES IN R VERSION 2.2.0
 
 NEW FEATURES

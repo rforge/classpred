@@ -64,7 +64,7 @@ library(ClassDiscovery)
 @ 
 \section{The Generic Genetic Algorithm}
 
-The \Rclass{GenAlg} class in the \Rpackage{ClassPrediction} library
+The \Rclass{GenAlg} class in the \Rpackage{GenAlgo} library
 provides generic tools for running a generic algorithm.  Here the
 basic idea is that we have a list of features, and we want to select a
 fixed number, $k$, of those features to include in a predictive model.
@@ -428,7 +428,7 @@ solutions, analogous to the Hamming distance between binary strings.
 We define the diversity of the population to be the average of the
 distance between all pairs of individuals.  This measure of diversity
 is implemented in the \Rfunction{popDiversity} function in the
-\Rpackage{ClassPrediction} package; we used this function above when
+\Rpackage{GenAlgo} package; we used this function above when
 evolving the population with the genetic algorithm.
 
 \begin{figure}
@@ -505,7 +505,7 @@ sample space, we needed a population of $1000$ individuals evolved
 through about $1000$ generations.  (Even though that means we
 evaluated up to $1,000,000$ candidate solutions, this is still a small
 number compared to the $2\times10^{12}$ ways to choose nine riders
-from a list of $102$.)  Unless some preliminary filtering ir performed
+from a list of $102$.)  Unless some preliminary filtering is performed
 to reduce the number of genes, it will probably take a much larger
 population and many more generations to search through gene-space for
 useful predictive features.
@@ -526,7 +526,7 @@ measure of the fitness of a set of gene-features is the distance
 between the centers of the two groups in the resulting multivariate
 space.  This measure is known as the Mahalanobis distance, and is
 implemented by the \Rfunction{maha} function in the
-\Rpackage{ClassPrediction} package.  A fitness function that is
+\Rpackage{GenAlgo} package.  A fitness function that is
 adequate for use in the constructor of a \Rclass{GenAlg} object is
 then provided by the function:
 <<mahafit>>=

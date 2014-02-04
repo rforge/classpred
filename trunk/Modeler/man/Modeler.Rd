@@ -46,7 +46,7 @@ Modeler(learn, predict, ...)
   Returns an object of the \code{\link{Modeler-class}}.
 }
 \author{
-  Kevin R. Coombes <kcoombes@mdanderson.org>
+  Kevin R. Coombes <krc@silicovore.com>
 }
 \seealso{
   See the descriptions of the \code{\link{learn}} function and

@@ -38,7 +38,7 @@ maha(data, groups, method = "mve")
   Academic Press, Reading, MA {1979}, pp. 213--254.
 }
 \author{
-  Kevin R. Coombes \email{kcoombes@mdanderson.org},
+  Kevin R. Coombes \email{krc@silicovore.com},
   P. Roebuck \email{proebuck@mdanderson.org}
 }
 \seealso{

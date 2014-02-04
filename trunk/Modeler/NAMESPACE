@@ -4,6 +4,16 @@
 ### NAMESPACE
 ###
 
+import(methods)
+import(class)
+import(rpart)
+import(TailRank)
+import(e1071)
+import(randomForest)
+import(nnet)
+import(ClassComparison)
+import(ClassDiscovery)
+
 ## various generics
 importMethodsFrom(ClassDiscovery, "predict")
 

@@ -34,7 +34,7 @@ Need some details.
   Retuirns an object of the \code{\link{FittedModel-class}}.
 }
 \author{
-  Kevin R. Coombes <kcoombes@mdanderson.org.
+  Kevin R. Coombes <krc@silicovore.com.
 }
 \seealso{
   See the descriptions of the \code{\link{learn}} function and

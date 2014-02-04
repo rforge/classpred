@@ -30,7 +30,7 @@ Returns a logical vector with length equal to the length of
 set.
 }
 \author{
-Kevin R. Coombes <kcoombes@mdanderson.org>
+Kevin R. Coombes <krc@silicovore.com>
 }
 \seealso{
   \code{\link{CrossVal}}, \code{\link{CrossVal-class}}, \code{\link{CrossVal-package}}.

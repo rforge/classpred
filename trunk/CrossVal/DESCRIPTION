@@ -1,10 +1,11 @@
 Package: CrossVal
-Version: 2.0.0
-Date: 2013-07-05
+Version: 2.0.1
+Date: 2014-01-29
 Title: Classes and methods for cross validation of "class prediction" with microarrays or proteomics 
 Author: Kevin R. Coombes
-Maintainer: Kevin R. Coombes <kcoombes@mdanderson.org>
-Depends: R (>= 2.10), methods, oompaBase (>= 3.0.1), Modeler
+Maintainer: Kevin R. Coombes <krc@silicovore.com>
+Depends: R (>= 3.0), oompaBase (>= 3.0.1), Modeler
+Imports: methods
 Suggests: Biobase
 Description: This package defines classes and methods to cross
   validate methods for "class prediction".  

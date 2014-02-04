@@ -6,19 +6,19 @@
 	**************************************************
 
 
+		CHANGES IN R VERSION 2.0.1
+
+BUG FIXES
+
+    o	Made compatible with new R check steps that verify DESCRIPTION
+        and NAMESPACE dependencies.
+
 		CHANGES IN R VERSION 2.0.0
 
 PACKAGING
 
     o	Separated the model learning-predicting code from the 
     cross-validation code.
-
-
-	**************************************************
-	*						 *
-	*	       1.0 SERIES NEWS			 *
-	*						 *
-	**************************************************
 
 
 		CHANGES IN R VERSION 1.0.1

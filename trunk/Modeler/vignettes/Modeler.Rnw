@@ -35,7 +35,7 @@ library(Modeler)
 
 \section{Simulated DataSet}
 In order to have something to test our models against, we simulate a
-dataset that has enough underlying structure to make it intersting.
+dataset that has enough underlying structure to make it interesting.
 First, we set the random seed so that the results will be reproducible.
 <<seed>>=
 set.seed(234843)
@@ -59,7 +59,7 @@ sigma <- 0.3
 nTrain <- 100
 nTest <- 100
 @ 
-For cleanup purposes, we specify the name sof things we can remove later.
+For cleanup purposes, we specify the names of things we can safely remove later.
 <<paramlist>>=
 paramlist <- c("nFeatures", "nSignif", "pB",
                "delta", "sigma", "nTrain", "nTest")
@@ -68,7 +68,7 @@ paramlist <- c("nFeatures", "nSignif", "pB",
 In addition to simulating the class assignment ($A$ or $B$), we will
 also simulate a continuous outcome that represents a probability of
 belonging to class $B$.  The continuous outcome
-(Figure!\ref{betadist}) will follow a beta distribution with
+(Figure~\ref{betadist}) will follow a beta distribution with
 parameters $\alpha$ and $\beta$.
 <<alpha.beta>>=
 alpha <- 0.75
@@ -92,7 +92,7 @@ or higher in $B$.
 <<signed>>=
 signed <- -1 + 2*rbinom(nSignif, 1, 0.5)
 @ 
-As noted above, te magnitude of the difference follows a normal
+As noted above, the magnitude of the difference follows a normal
 distibution. 
 <<offsets>>=
 offsets <- c(signed*rnorm(nSignif, delta, sigma), # can change in either direction
@@ -102,7 +102,7 @@ offsets <- c(signed*rnorm(nSignif, delta, sigma), # can change in either directi
 \subsection{Training Data}
 To simulate the training dataset, we first simulate the continuous
 outcomes (interpreted as the probability of belonging to class $B$).
-These are transformed using a logit function so they lie non the
+These are transformed using a logit function so they lie on the
 entire real line.
 <<out>>=
 lp <- function(p) log(p/(1-p))
@@ -148,7 +148,7 @@ continuous outcomes.
 pOut <- rbeta(nTest, alpha, beta)
 testOutcome <- lp(pOut)
 @ 
-We convert the continuos outcomes to binary class assignments.
+We convert the continuous outcomes to binary class assignments.
 <<test.class>>=
 testClass <- factor(c("cyan", "magenta")[1 + 1*(pOut > 0.5)])
 summary(testClass)
@@ -198,7 +198,7 @@ hist(mtt)
 par(opar)
 @ 
 
-We then usae a beta-uniform-micture (BUM) model to estimate the false
+We then usae a beta-uniform-mixture (BUM) model to estimate the false
 discover rate (FDR).
 <<bum>>=
 bum <- Bum(mtt@p.values)

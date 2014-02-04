@@ -7,7 +7,6 @@ learnTailRank <- function(data, status, params, pfun) {
   if (is.null(params$conf)) {
     params$conf <- 0.9
   }  
-  require(TailRank)
   tr <- TailRankTest(data, status, specificity=params$spec,
                      confidence=params$conf, direction="two")
   tdata <- data.frame(Stat=status, t(data))

@@ -101,7 +101,7 @@ predictLR(newdata, details, status, type ="response", ...)
   predictions of the model when applied to the new data set.
 }
 \author{
-  Kevin R. Coombes <kcoombes@mdanderson.org>
+  Kevin R. Coombes <krc@silicovore.com>
 }
 \seealso{
   See \code{\link{Modeler-class}} and \code{\link{Modeler}} for details

@@ -26,7 +26,7 @@ function that can be applied to a \code{Modeler} object is
 \code{\link{learn}}, which has not been made into a generic funtion.
 }
 \author{
-  Kevin R. Coombes <kcoombes@mdanderson.org>
+  Kevin R. Coombes <krc@silicovore.com>
 }
 \seealso{
   See the description of the \code{\link{FittedModel-class}} for details

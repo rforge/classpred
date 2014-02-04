@@ -41,8 +41,6 @@ modelerLR <- Modeler(learnLR, predictLR)
 # currently only works for binary classification, because
 # of the way it uses t-tests to select features.
 learnPCALR <- function(data, status, params, pfun) {
-  require(ClassComparison)
-  require(ClassDiscovery)
   # manually set default values for the parameters
   if (is.null(params$alpha)) {
     params$alpha <- 0.10
@@ -103,8 +101,6 @@ predictPCALR <- function(newdata, details, status, ...) {
 modelerPCALR <- Modeler(learnPCALR, predictPCALR)
 
 learnSelectedLR <- function(data, status, params, pfun) {
-  require(ClassComparison)
-  require(ClassDiscovery)
   if (is.null(params$alpha)) {
     params$alpha <- 0.10
   }

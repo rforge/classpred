@@ -6,16 +6,19 @@
 	**************************************************
 
 
-		CHANGES IN R VERSION 1.0.3
+		CHANGES IN R VERSION 2.0.1
+
+BUG FIXES
+
+    o	Made compatible with new R check steps that verify DESCRIPTION
+        and NAMESPACE dependencies.
+
+
+		CHANGES IN R VERSION 2.0.0
 
 REFACTOR
-    o	Removed depence on PreProcess.
 
-	**************************************************
-	*						 *
-	*	       1.0 SERIES NEWS			 *
-	*						 *
-	**************************************************
+    o	Removed depence on PreProcess.
 
 
 		CHANGES IN R VERSION 1.0.3

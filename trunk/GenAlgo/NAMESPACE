@@ -1,5 +1,8 @@
 # various generics
 import(methods)
+import(ClassDiscovery)
+import(MASS)
+
 importMethodsFrom(oompaBase,
                   "hist", "image", "plot")
 importMethodsFrom(oompaBase,

@@ -24,9 +24,7 @@
   }
 }
 \author{
-  Kevin R. Coombes \email{kcoombes@mdanderson.org}
-}
-\references{
+  Kevin R. Coombes \email{krc@silicovore.com}
 }
 \seealso{
   The following classification methods have been adapted to use the

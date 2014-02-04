@@ -1,7 +1,6 @@
 # Copyright (C) Kevin R. Coombes, 2007-2013
 
 learnRPART <- function(data, status, params, pfun) {
-  require(rpart)
   tda <- data.frame(status, t(data))
   rp <- rpart(status ~ ., data=tda, control=params)
   fm <- FittedModel(pfun, data, status,

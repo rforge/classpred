@@ -3,7 +3,6 @@
 # random forest
 
 learnRF <- function(data, status, params, pfun) {
-  require(randomForest)
   tdata <- data.frame(Stat=status, t(data))
   model <- randomForest(Stat ~ ., data=tdata)
   FittedModel(pfun, data, status,

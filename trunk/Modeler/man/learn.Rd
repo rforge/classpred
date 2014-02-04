@@ -44,7 +44,7 @@ learn(model, data, status)
   of related references.
 }
 \author{
-  Kevin R. Coombes <kcoombes@mdanderson.org>
+  Kevin R. Coombes <krc@silicovore.com>
 }
 \seealso{
   See \code{\link{predict}} for how to make predictions on new test data

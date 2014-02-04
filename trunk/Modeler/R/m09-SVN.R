@@ -3,7 +3,6 @@
 # Support Vector Machines
 
 learnSVM <- function(data, status, params, pfun) {
-  require(e1071)
   tdata <- data.frame(Stat=status, t(data))
   model <- svm(Stat ~ ., data=tdata)
   FittedModel(pfun, data, status,

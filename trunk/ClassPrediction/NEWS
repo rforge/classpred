@@ -1,12 +1,19 @@
 			Dear Emacs, please make this -*-Text-*- mode!
 	**************************************************
 	*						 *
-	*	       2.10 SERIES NEWS			 *
+	*	       3.0 SERIES NEWS			 *
 	*						 *
 	**************************************************
 
 
-		CHANGES IN R VERSION 2.10.2
+		CHANGES IN R VERSION 3.0.1
+
+BUG FIXES
+
+    o	Made compatible with new R check steps that verify DESCRIPTION
+        and NAMESPACE dependencies.
+
+		CHANGES IN R VERSION 3.0.0
 
 BUG FIXES
 
@@ -31,13 +38,6 @@ NEW FEATURES
     o	Added classes for cross-validation.
 
     o	Checked compatibility with R 2.10.0.
-
-
-	**************************************************
-	*						 *
-	*	       2.9 SERIES NEWS			 *
-	*						 *
-	**************************************************
 
 
 		CHANGES IN R VERSION 2.9.0
