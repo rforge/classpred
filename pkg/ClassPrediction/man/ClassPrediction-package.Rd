@@ -24,7 +24,7 @@
 }
 \seealso{
   \code{\link{GenAlg-class}},
-  \code{\link{CrossVal-class}}.
+  \code{\link{CrossValidate-class}}.
 }
 \keyword{package}
 
