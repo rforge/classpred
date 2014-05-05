@@ -1,7 +1,7 @@
-%\VignetteIndexEntry{CrossVal}
+%\VignetteIndexEntry{CrossValidate}
 %\VignetteKeywords{Cross Validation,Class Prediction}
-%\VignetteDepends{CrossVal}
-%\VignettePackage{CrossVal}
+%\VignetteDepends{CrossValidate}
+%\VignettePackage{CrossValidate}
 \documentclass{article}
 
 \usepackage{hyperref}

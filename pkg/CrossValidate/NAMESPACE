@@ -14,7 +14,7 @@ exportMethods("show", "summary")
 export("balancedSplit")
 
 ## xv02-CrossVal
-exportClasses("CrossVal", "CrossValSummary")
-export("CrossVal") # generator
+exportClasses("CrossValidate", "CrossValSummary")
+export("CrossValidate") # generator
 
 

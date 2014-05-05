@@ -1,6 +1,6 @@
-\name{CrossVal}
-\alias{CrossVal}
-\title{Creating CrossVal objects}
+\name{CrossValidate}
+\alias{CrossValidate}
+\title{Creating CrossValidate objects}
 \description{
   Given a model classifier and a data set, this function performs
   cross-valiadtion by repeatedly splitting the data into training and
@@ -8,7 +8,7 @@
   classifer on new data.
 }
 \usage{
-CrossVal(model, data, status, frac, nLoop, verbose=TRUE)
+CrossValidate(model, data, status, frac, nLoop, verbose=TRUE)
 }
 \arguments{
   \item{model}{
@@ -31,7 +31,7 @@ CrossVal(model, data, status, frac, nLoop, verbose=TRUE)
 }
 }
 \details{
-  The \code{CrossVal} package provides generic tools for performing
+  The \code{CrossValidate} package provides generic tools for performing
   cross-validation on classificaiton methods in the context of
   high-throughput data sets such as those produced by gene expression
   microarrays. In order to use a classifier with this implementaiton of
@@ -39,7 +39,7 @@ CrossVal(model, data, status, frac, nLoop, verbose=TRUE)
   learning models from training data, and one for making predictions on
   test data). These functions, along with any required meta-parameters,
   are used to create an object of the \code{\link{Modeler-class}}. That
-  object is then passed to the \code{\link{CrossVal}} function along
+  object is then passed to the \code{\link{CrossValidate}} function along
   with the full training data set. The full data set is then repeatedly
   split into its own training and test sets; you can specify the
   fraction to be used for training and the number of iterations. The
@@ -48,21 +48,21 @@ CrossVal(model, data, status, frac, nLoop, verbose=TRUE)
   by cross-validation.
 }
 \value{
-  An object of the \code{\link{CrossVal-class}}.
+  An object of the \code{\link{CrossValidate-class}}.
 }
 \references{
-  See the manual page for the \code{\link{CrossVal-package}} for a list
+  See the manual page for the \code{\link{CrossValidate-package}} for a list
   of related references.
 }
 \author{
   Kevin R. Coombes \email{krcoombes@mdanderson.org}
 }
 \seealso{
-  See the manual page for the \code{\link{CrossVal-package}} for a list
+  See the manual page for the \code{\link{CrossValidate-package}} for a list
   of classifiers that have been adapted to work with this
   cross-validation mechanism.
 
-  See \code{\link{CrossVal-class}} for a description of the slots in
+  See \code{\link{CrossValidate-class}} for a description of the slots in
   the object created by this function.
 }
 \examples{
@@ -105,7 +105,7 @@ function(model, data, status, frac, nLoop, verbose=TRUE) {
     # now make the predictions using the logistic model
     validPredict[,i] <- predict(thisModel, newdata=data[, !tr])
   }
-  new("CrossVal",
+  new("CrossValidate",
       nIterations=nLoop,
       trainPercent=frac,
       outcome=status,

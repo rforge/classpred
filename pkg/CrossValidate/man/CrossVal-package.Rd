@@ -1,9 +1,9 @@
-\name{CrossVal-package}
-\alias{CrossVal-package}
+\name{CrossValidate-package}
+\alias{CrossValidate-package}
 \docType{package}
 \title{Cross validation of high-throughput prediction algorithms}
 \description{
-  The \code{CrossVal} package provides generic tools for performing
+  The \code{CrossValidate} package provides generic tools for performing
   cross-validation on classification methods in the context of high-throughput
   data sets such as those produced by gene expression microarrays. In order to
   use a classifier with this implementation of cross-validation, you must first
@@ -11,7 +11,7 @@
   one for making predictions on test data). These functions, along with any
   required meta-parameters, are used to create an object of the
   \code{\link{Modeler-class}}. That object is then passed to the
-  \code{\link{CrossVal}} function along with the full training data set. The
+  \code{\link{CrossValidate}} function along with the full training data set. The
   full data set is then repeatedly split into its own training and test sets;
   you can specify the fraction to be used for training and the number of
   iterations. The result is a detailed look at the accuracy, sensitivity,
@@ -20,7 +20,7 @@
 }
 \details{
   \tabular{ll}{
-    Package: \tab CrossVal\cr
+    Package: \tab CrossValidate\cr
     Type: \tab Package\cr
     Version: \tab 1.0.1\cr
     Date: \tab 2012-05-04\cr

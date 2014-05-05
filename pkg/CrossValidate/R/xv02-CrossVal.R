@@ -6,7 +6,7 @@
 
 
 ##=============================================================================
-setClass("CrossVal",
+setClass("CrossValidate",
          representation(nIterations="numeric",
                         trainPercent="numeric",
                         outcome="factor",
@@ -26,7 +26,7 @@ setClass("CrossValSummary",
 
 
 ##-----------------------------------------------------------------------------
-CrossVal <- function(model, data, status, frac, nLoop, verbose=TRUE) {
+CrossValidate <- function(model, data, status, frac, nLoop, verbose=TRUE) {
     if (length(status) != ncol(data)) {
         stop("length of status vector must match the size of the data set.")
     }
@@ -63,7 +63,7 @@ CrossVal <- function(model, data, status, frac, nLoop, verbose=TRUE) {
         validPredict[, i] <- predict(thisModel, newdata=data[, !tr])
     }
 
-    new("CrossVal",
+    new("CrossValidate",
         nIterations=nLoop,
         trainPercent=frac,
         outcome=status,
@@ -76,7 +76,7 @@ CrossVal <- function(model, data, status, frac, nLoop, verbose=TRUE) {
 
 
 ##-----------------------------------------------------------------------------
-setMethod("summary", signature(object="CrossVal"),
+setMethod("summary", signature(object="CrossValidate"),
           function(object, ...) {
     ##-------------------------------------------------------------------------
     oneset <- function(outc, pred, N) {

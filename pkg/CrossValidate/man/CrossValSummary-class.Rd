@@ -9,7 +9,7 @@
 \section{Objects from the Class}{
 Objects are almost always created automatically by applying the
 \code{summary} method to an object oif the
-\code{\link{CrossVal-class}}.
+\code{\link{CrossValidate-class}}.
 }
 \section{Slots}{
   \describe{
@@ -28,7 +28,7 @@ Objects are almost always created automatically by applying the
   Kevin R. Coombes <krcoombes@mdanderson.org>
 }
 \seealso{
-  \code{\link{CrossVal-class}}
+  \code{\link{CrossValidate-class}}
 }
 \examples{
 showClass("CrossValSummary")

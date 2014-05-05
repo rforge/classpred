@@ -33,7 +33,7 @@ set.
 Kevin R. Coombes <krc@silicovore.com>
 }
 \seealso{
-  \code{\link{CrossVal}}, \code{\link{CrossVal-class}}, \code{\link{CrossVal-package}}.
+  \code{\link{CrossValidate}}, \code{\link{CrossValidate-class}}, \code{\link{CrossValidate-package}}.
 }
 \examples{
 nFeatures <- 40

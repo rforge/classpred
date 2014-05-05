@@ -1,13 +1,13 @@
-\name{CrossVal-class}
-\alias{CrossVal-class}
-\alias{summary,CrossVal-method}
+\name{CrossValidate-class}
+\alias{CrossValidate-class}
+\alias{summary,CrossValidate-method}
 \docType{class}
-\title{Class "CrossVal"}
+\title{Class "CrossValidate"}
 \description{
   ~~ A concise (1-5 lines) description of what the class is.  ~~
 }
 \section{Objects from the Class}{
-Objects can be created by calls to the constructor function, \code{\link{CrossVal}}.
+Objects can be created by calls to the constructor function, \code{\link{CrossValidate}}.
 }
 \section{Slots}{
   \describe{
@@ -23,22 +23,22 @@ Objects can be created by calls to the constructor function, \code{\link{CrossVa
 }
 \section{Methods}{
   \describe{
-    \item{summary}{\code{signature(object = "CrossVal")}: ... }
+    \item{summary}{\code{signature(object = "CrossValidate")}: ... }
 	 }
 }
 \references{
-  See the manual page for the \code{\link{CrossVal-package}} for a list
+  See the manual page for the \code{\link{CrossValidate-package}} for a list
   of related references.
 }
 \author{
   Kevin R. Coombes <krcoombes@mdanderson.org>
 }
 \seealso{
-  See \code{\link{CrossVal-package}} for an overview, and see
-  \code{\link{CrossVal}} for the constructor function.
+  See \code{\link{CrossValidate-package}} for an overview, and see
+  \code{\link{CrossValidate}} for the constructor function.
 }
 \examples{
-showClass("CrossVal")
+showClass("CrossValidate")
 }
 \keyword{classes}
 
