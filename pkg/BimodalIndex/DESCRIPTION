@@ -1,0 +1,15 @@
+Package: BimodalIndex
+Version: 1.0.0
+Date: 2014-05-19
+Title: The Bimodality Index
+Author: Kevin R. Coombes
+Maintainer: Kevin R. Coombes <krc@silicovore.com>
+Depends: R (>= 3.0)
+Imports: oompaBase (>= 3.0.1), mclust
+Description: This package defines the functions used to compute the
+  bimodal index as defined by Wang et al.
+License: Artistic-2.0
+LazyLoad: yes
+biocViews: Microarray
+URL: http://bioinformatics.mdanderson.org/Software/OOMPA
+

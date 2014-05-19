@@ -1,0 +1,66 @@
+%\VignetteIndexEntry{Bimodality Index}
+%\VignetteKeywords{bimodality}
+%\VignetteDepends{oompaBase,BimodalIndex}
+%\VignettePackage{BimodalIndex}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cite}
+\pagestyle{myheadings}
+\markright{bimodalIndex}
+
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8in}
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+
+\def\rcode#1{\texttt{#1}}
+\def\fref#1{\textbf{Figure~\ref{#1}}}
+\def\tref#1{\textbf{Table~\ref{#1}}}
+\def\sref#1{\textbf{Section~\ref{#1}}}
+
+\title{Bimodality Index}
+\author{Kevin R. Coombes}
+\date{19 February 2014}
+
+\begin{document}
+
+<<echo=FALSE>>=
+options(width=88)
+options(SweaveHooks = list(fig = function() par(bg='white')))
+#if (!file.exists("Figures")) dir.create("Figures")
+@ 
+%\SweaveOpts{prefix.string=Figures/02-AML-27plex, eps=FALSE}
+
+\maketitle
+\tableofcontents
+
+\section{Simulated Data}
+
+We simulate a dataset.
+<<simdata>>=
+set.seed(564684)
+nSamples <- 30
+nGenes <- 3000
+dataset <- matrix(rnorm(nSamples*nGenes), ncol=nSamples, nrow=nGenes)
+dimnames(dataset) <- list(paste("G", 1:nGenes, sep=''),
+                          paste("S", 1:nSamples, sep=''))
+@ 
+
+<<lib>>=
+library(BimodalIndex)
+@ 
+\section{Appendix}
+
+This analysis was performed in the following directory:
+<<getwd>>=
+getwd()
+@ 
+This analysis was performed in the following software environment:
+<<si>>=
+sessionInfo()
+@ 
+
+\end{document}
+
