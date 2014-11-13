@@ -1,11 +1,18 @@
 			Dear Emacs, please make this -*-Text-*- mode!
 	**************************************************
 	*						 *
-	*	       1.0 SERIES NEWS			 *
+	*	       1.1 SERIES NEWS			 *
 	*						 *
 	**************************************************
 
-		CHANGES IN R VERSION 3.0.1
+		CHANGES IN R VERSION 1.1.0
+
+BREAKING CHANGES
+
+    o	Moved the "lungData" set into the new "oompaData" package that
+        also contains a prostate dataset.
+
+		CHANGES IN R VERSION 1.0.0
 
 NEW FEATURES
 

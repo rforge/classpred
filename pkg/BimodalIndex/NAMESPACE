@@ -4,6 +4,7 @@
 
 ## various generics
 import(oompaBase)
+import(oompaData)
 import(mclust)
 
 ## cd09-bimIndex
