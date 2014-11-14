@@ -1,6 +1,6 @@
 Package: ClassPrediction
-Version: 3.0.2
-Date: 2014-05-05
+Version: 3.1.0
+Date: 2014-11-13
 Title: Classes and methods for "class prediction" with microarrays or proteomics
 Author: Kevin R. Coombes
 Maintainer: Kevin R. Coombes <krc@silicovore.com>
@@ -11,7 +11,7 @@ Description: This package bundles the classes and pacakges used to
   prediction consists of supervised methods to select relevant features
   and construct predictive models for binary, ordinal, continuous, or
   survival outcomes. 
-License: Artistic-2.0
+License: Apache License (== 2.0)
 biocViews: Microarray, Clustering
-URL: http://bioinformatics.mdanderson.org/Software/OOMPA
+URL: http://oompa.r-forge.r-project.org/
 

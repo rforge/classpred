@@ -1,12 +1,18 @@
 			Dear Emacs, please make this -*-Text-*- mode!
 	**************************************************
 	*						 *
-	*	       2.1 SERIES NEWS			 *
+	*	       2.2 SERIES NEWS			 *
 	*						 *
 	**************************************************
 
 
-		CHANGES IN R VERSION 2.01.
+		CHANGES IN R VERSION 2.2.0
+
+ADMINISTRATIVE
+
+    o	Changed LICENSE to Apache 2.0
+
+		CHANGES IN R VERSION 2.0.1
 
 BUG FIXES
 

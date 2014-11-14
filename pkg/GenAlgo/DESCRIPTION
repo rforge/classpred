@@ -1,6 +1,6 @@
 Package: GenAlgo
-Version: 2.0.2
-Date: 2014-08-08
+Version: 2.1.0
+Date: 2014-11-13
 Title: Classes and methods to use genetic algorithms for feature selection
 Author: Kevin R. Coombes
 Maintainer: Kevin R. Coombes <krc@silicovore.com>
@@ -12,8 +12,8 @@ Description: This package defines classes and methods that can be used
   that we want to select a fixed number of features to combine into a
   linear classifier that can predict a binary outcome, and can use a
   genetic algorithm heuristically to select an optimal set of features.
-License: Artistic-2.0
+License: Apache License (== 2.0)
 LazyLoad: yes
 biocViews: Microarray, Clustering
-URL: http://bioinformatics.mdanderson.org/Software/OOMPA
+URL: http://oompa.r-forge.r-project.org/
 
