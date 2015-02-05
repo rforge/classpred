@@ -1,11 +1,11 @@
 Package: CrossValidate
-Version: 2.2.0
-Date: 2014-11-13
+Version: 2.2.1
+Date: 2015-02-05
 Title: Classes and methods for cross validation of "class prediction" with microarrays or proteomics 
 Author: Kevin R. Coombes
 Maintainer: Kevin R. Coombes <krc@silicovore.com>
-Depends: R (>= 3.0), oompaBase (>= 3.0.1), Modeler
-Imports: methods
+Depends: R (>= 3.0), Modeler
+Imports: methods, oompaBase (>= 3.0.1)
 Suggests: Biobase
 Description: This package defines classes and methods to cross
   validate methods for "class prediction".  
