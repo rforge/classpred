@@ -1,4 +1,4 @@
-# Copyright (C) Kevin R. Coombes, 2007-2013
+# Copyright (C) Kevin R. Coombes, 2007-2016
 
 ###
 ### m01-model.R
@@ -17,7 +17,11 @@ Modeler <- function(learn, predict, ...) {
         paramList=list(...))
 }
 
-learn <- function(model, data, status) {
+learn <- function(model, data, status, pruner=NULL) {
+    if (!is.null(pruner)) {
+      keep <- prune(pruner, data, status)
+      data <- data[keep, ]
+    }
     model@learnFunction(data,
                         status,
                         model@paramList,

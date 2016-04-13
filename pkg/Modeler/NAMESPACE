@@ -19,6 +19,11 @@ importMethodsFrom(ClassDiscovery, "predict")
 
 exportMethods("predict")
 
+## m00-pruner
+exportClasses("Pruner")
+export(prune) # maybe convert to generic?
+export(makeFPruner, makeTPruner, keepAll)
+
 ## m01-Model
 exportClasses("Modeler")
 export("Modeler") # generator
