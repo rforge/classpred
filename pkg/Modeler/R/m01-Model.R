@@ -17,9 +17,9 @@ Modeler <- function(learn, predict, ...) {
         paramList=list(...))
 }
 
-learn <- function(model, data, status, pruner=NULL) {
-    if (!is.null(pruner)) {
-      keep <- prune(pruner, data, status)
+learn <- function(model, data, status, prune=NULL) {
+    if (!is.null(prune)) {
+      keep <- prune(data, status)
       data <- data[keep, ]
     }
     model@learnFunction(data,

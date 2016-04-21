@@ -12,31 +12,12 @@
 # OUTPUT:
 #	logical vector equal in length to number of data rows
 
-setClass("Pruner",
-         representation(pruneFunction = "function",
-                        paramList = "list"))
-
-Pruner <- function(f, ...) {
-  new("Pruner",
-      pruneFunction = f,
-      paramList=list(...)
-      )
-}
-
-prune <- function(object, data, group) {
-  object@pruneFunction(data, group, object@paramList)
-}
-
-keepAll <- Pruner(function(data, group, params) {
+keepAll <- function(data, group) {
   rep(TRUE, length=nrow(data))
-})
+}
 
 # feature selection or "pruning" by an F-score
-fscore <- function(data, group, params) {
-  if (is.null(params$q)) {
-    params$q <- 0.9
-  }
-  q <- params$q
+fscore <- function(data, group, q) {
   isA <- group == levels(group)[1]
   isB <- !isA
   m  <- matrixMean(data)
@@ -48,12 +29,14 @@ fscore <- function(data, group, params) {
   fval > quantile(fval, q)
 }
 
-makeFPruner <- function(q) Pruner(fscore, q)
+makeFPruner <- function(q) {
+  function(data, group) {
+    Modeler:::fscore(data, group, q)
+  }
+}
 
 # pruning by a t-statistic
-tscore <- function(data, group, params) {
-  fdr <- params$fdr
-  ming <- params$ming
+tscore <- function(data, group, fdr, ming=500) {
   mtt <- MultiTtest(data, group)
   bum <- Bum(mtt@p.values)
   x <- selectSignificant(bum, alpha=fdr, by="FDR")
@@ -64,6 +47,8 @@ tscore <- function(data, group, params) {
   x
 }
 
-makeTPruner <- function(fdr, ming=100) {
-  Pruner(tscore, fdr=fdr, ming=min)
+makeTPruner <- function(fdr, ming=500) {
+  function(data, group) {
+    Modeler:::tscore(data, group, fdr, ming)
+  }
 }
