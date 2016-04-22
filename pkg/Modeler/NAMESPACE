@@ -23,7 +23,9 @@ exportMethods("predict")
 export(filterMean, filterSD, filterRange, filterMin, filterMax, filterMedian)
 
 ## m00-pruner
-export(keepAll, fsModifiedFisher, fsTtest)
+export(keepAll, fsTtest, fsModifiedFisher, fsPearson, fsSpearman,
+       fsMedSplitOddsRatio, fsChisquared, fsEntropy,
+       fsFisherRandomForest)
 
 ## m01-Model
 exportClasses("Modeler")

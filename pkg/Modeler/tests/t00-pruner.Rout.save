@@ -1,0 +1,94 @@
+
+R version 3.2.0 (2015-04-16) -- "Full of Ingredients"
+Copyright (C) 2015 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(Modeler)
+Loading required package: ClassDiscovery
+Loading required package: cluster
+Loading required package: oompaBase
+Loading required package: ClassComparison
+> set.seed(246391)
+> data <- matrix(rnorm(1000*36), nrow=1000, ncol=36)
+> data[1:50, 1:18] <- data[1:50, 1:18] + 1
+> status <- factor(rep(c("A", "B"), each=18))
+> 
+> fsel <- fsTtest(fdr=0.10, ming=125)
+> summary(fsel(data, status))
+   Mode   FALSE    TRUE    NA's 
+logical     875     125       0 
+> 
+> fsel <- fsModifiedFisher(q = 0.75)
+> summary(fsel(data, status))
+   Mode   FALSE    TRUE    NA's 
+logical     750     250       0 
+> 
+> fsel <- fsPearson(q = 0.9)
+> summary(fsel(data, status))
+   Mode   FALSE    TRUE    NA's 
+logical     900     100       0 
+> fsel <- fsPearson(rho=0.3)
+> summary(fsel(data, status))
+   Mode   FALSE    TRUE    NA's 
+logical     891     109       0 
+> 
+> fsel <- fsSpearman(q=0.9)
+> summary(fsel(data, status))
+   Mode   FALSE    TRUE    NA's 
+logical     900     100       0 
+> fsel <- fsSpearman(rho=0.3)
+> summary(fsel(data, status))
+   Mode   FALSE    TRUE    NA's 
+logical     893     107       0 
+> 
+> fsel <- fsMedSplitOddsRatio(OR = 5)
+> summary(fsel(data, status))
+   Mode   FALSE    TRUE    NA's 
+logical     964      36       0 
+> fsel <- fsMedSplitOddsRatio(q = 0.9) # note effect opf ties
+> summary(fsel(data, status))
+   Mode   FALSE    TRUE    NA's 
+logical     964      36       0 
+> 
+> fsel <- fsChisquared(cutoff=0.5)
+> summary(fsel(data, status))
+   Mode   FALSE    TRUE    NA's 
+logical     824     176       0 
+> fsel <- fsChisquared(q = 0.9)
+> summary(fsel(data, status))
+   Mode   FALSE    TRUE    NA's 
+logical     900     100       0 
+> 
+> fsel <- fsEntropy()
+> summary(fsel(data, status))
+   Mode   FALSE    TRUE    NA's 
+logical     900     100       0 
+> fsel <- fsEntropy(kind="gain.ratio")
+> summary(fsel(data, status))
+   Mode   FALSE    TRUE    NA's 
+logical     900     100       0 
+> fsel <- fsEntropy(kind="symm")
+> summary(fsel(data, status))
+   Mode   FALSE    TRUE    NA's 
+logical     900     100       0 
+> 
+> fsel <- fsFisherRandomForest(q = 0.9)
+> summary(fsel(data, status))
+   Mode   FALSE    TRUE    NA's 
+logical     900     100       0 
+> 
+> proc.time()
+   user  system elapsed 
+   4.57    0.09    4.66 
