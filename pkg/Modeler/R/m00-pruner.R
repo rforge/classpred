@@ -22,11 +22,11 @@ fsModifiedFisher <- function(q) {
   function(data, group) {
     isA <- group == levels(group)[1]
     isB <- !isA
-    m  <- matrixMean(data)
-    mA <- matrixMean(data[,isA])
-    mB <- matrixMean(data[,isB])
-    vA <- matrixVar(data[,isA], mA)
-    vB <- matrixVar(data[,isB], mB)
+    m  <- oompaBase::matrixMean(data)
+    mA <- oompaBase::matrixMean(data[,isA])
+    mB <- oompaBase::matrixMean(data[,isB])
+    vA <- oompaBase::matrixVar(data[,isA], mA)
+    vB <- oompaBase::matrixVar(data[,isB], mB)
     fval <- ((mA - m)^2 + (mB - m)^2)/(vA + vB)
     fval > quantile(fval, q)
   }
