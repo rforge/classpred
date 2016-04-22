@@ -19,8 +19,11 @@ importMethodsFrom(ClassDiscovery, "predict")
 
 exportMethods("predict")
 
+## m00-filter
+export(filterMean, filterSD, filterRange, filterMin, filterMax, filterMedian)
+
 ## m00-pruner
-export(keepAll, makeFPruner, makeTPruner)
+export(keepAll, fsModifiedFisher, fsTtest)
 
 ## m01-Model
 exportClasses("Modeler")
