@@ -39,3 +39,7 @@ summary(fsel(data, status))
 
 fsel <- fsFisherRandomForest(q = 0.9)
 summary(fsel(data, status))
+
+fsel <- fsTailRank(spec=0.9, conf=0.5)
+summary(fsel(data, status))
+

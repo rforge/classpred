@@ -89,6 +89,12 @@ logical     900     100       0
    Mode   FALSE    TRUE    NA's 
 logical     900     100       0 
 > 
+> fsel <- fsTailRank(spec=0.9, conf=0.5)
+> summary(fsel(data, status))
+   Mode   FALSE    TRUE    NA's 
+logical     997       3       0 
+> 
+> 
 > proc.time()
    user  system elapsed 
    4.57    0.09    4.66 

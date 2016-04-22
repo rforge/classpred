@@ -164,3 +164,13 @@ fsFisherRandomForest <- function(q) {
     rating > quantile(rating, q)
   }
 }
+
+fsTailRank <- function(specificity=0.9, tolerance=0.5, confidence=0.5) {
+  function(data, group) {
+    trt <- TailRankTest(data, group, dir="two",
+                        specificity=specificity,
+                        tolerance=tolerance,
+                        confidence=confidence)
+    as.logical(trt)
+  }
+}
