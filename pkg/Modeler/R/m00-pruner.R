@@ -167,7 +167,7 @@ fsFisherRandomForest <- function(q) {
 
 fsTailRank <- function(specificity=0.9, tolerance=0.5, confidence=0.5) {
   function(data, group) {
-    trt <- TailRankTest(data, group, dir="two",
+    trt <- TailRankTest(data, group, direction="two",
                         specificity=specificity,
                         tolerance=tolerance,
                         confidence=confidence)

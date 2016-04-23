@@ -26,14 +26,14 @@ filterRange(cutoff)
   }
 }
 \details{
-  Following the usual conventions introduced from the world
+  Following the usual conventions introduced from the world of
   gene expression microarrays, a typical data matrix is constructed from
   columns reporesenting samples on which we want to make predictions
   amd rows representing the features used to construct the predictive
   model. In this context, we define a \emph{filter} to be a function
   that accepts a data matrix as its only argument and returns a logical
   vector, whose length equals the number of rows in the matrix, where
-  'TRUE' indiactes features that should be retrained. Most filtering
+  'TRUE' indicates features that should be retrained. Most filtering
   functions belong to parametrized families, with one of the most common
   examples being
   "retain all features whose mean is above some pre-specified cutoff".

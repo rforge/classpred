@@ -8,7 +8,7 @@ Learning models from data
   fit a binary classification model to a training data set.
 }
 \usage{
-learn(model, data, status)
+learn(model, data, status, prune=NULL)
 }
 \arguments{
   \item{model}{
@@ -21,7 +21,11 @@ learn(model, data, status)
   \item{status}{
     A factor, with two levels, containing the known classification of
     the training data.
-}
+  }
+  \item{prune}{A "pruning" funciton; that is, a funciton that takes two
+    arguments (a data matrix and a class factor) and returns a logical
+    vector indicating which features to retain.
+  }
 }
 \details{
   Objects of the \code{\link{Modeler-class}} contain functions to learn
