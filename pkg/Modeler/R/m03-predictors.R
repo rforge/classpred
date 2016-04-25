@@ -79,7 +79,7 @@ learnPCALR <- function(data, status, params, pfun) {
   # assemble training status and PC features into a data frame
   trdata <- spca@scores[, 1:NC]
   # rely on the existing LR code to fit the regression model
-  fmBase <- learnLR(trdata, status, params, predictLR)
+  fmBase <- learnLR(t(trdata), status, params, predictLR)
   mmod <- fmBase@details$model
   nCompUsed <- length(mmod$coefficients)-1 #$
   FittedModel(pfun, data, status,
@@ -95,7 +95,8 @@ predictPCALR <- function(newdata, details, status, ...) {
   # the values of the predictors in the test set
   proj <- predict(details$spca, newdata=newdata[details$sel,])
   temp <- data.frame(proj)[, 1:details$nCompAvail]
-  predict(details$baseModel, temp, ...)
+  base <- details$baseModel
+  base@predictFunction(t(temp), base@details, base@trainStatus, ...)
 } 
 
 modelerPCALR <- Modeler(learnPCALR, predictPCALR)
