@@ -33,6 +33,13 @@ filterRange <- function(cutoff) {
   }
 }
 
+filterIQR <- function(cutoff) {
+  function(data) {
+    r <- apply(data, 1, function(x) diff(quantile(x,c(0.25, 0.75))))
+    r > cutoff
+  }
+}
+
 filterMin <- function(cutoff) {
   function(data) {
     r <- apply(data, 1, min, na.rm=TRUE)

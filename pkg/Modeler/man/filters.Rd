@@ -2,6 +2,7 @@
 \alias{filterMean}
 \alias{filterSD}
 \alias{filterRange}
+\alias{filterIQR}
 \alias{filterMin}
 \alias{filterMax}
 \alias{filterMedian}
@@ -18,6 +19,7 @@ filterSD(cutoff)
 filterMin(cutoff)
 filterMax(cutoff)
 filterRange(cutoff)
+filterIQR(cutoff)
 }
 \arguments{
   \item{cutoff}{
@@ -45,7 +47,7 @@ filterRange(cutoff)
   we want to ensure that we use the same filtering rule each time.
 }
 \value{
-  Each of the six functions described here return a filter function,
+  Each of the seven functions described here return a filter function,
   \code{f}, that can be used by \code{logicalVector <- filter(data)}.
 }
 \author{
