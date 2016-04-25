@@ -17,14 +17,14 @@ Modeler <- function(learn, predict, ...) {
         paramList=list(...))
 }
 
-learn <- function(model, data, status, prune=NULL) {
-    if (!is.null(prune)) {
-      keep <- prune(data, status)
-      data <- data[keep, ]
-    }
-    model@learnFunction(data,
-                        status,
-                        model@paramList,
-                        model@predictFunction)
+learn <- function(model, data, status, prune=keepAll) {
+  keep <- prune(data, status)
+  data <- data[keep, ]
+  fitted <- model@learnFunction(data,
+                                status,
+                                model@paramList,
+                                model@predictFunction)
+  fitted@fsVector <- keep
+  fitted
 }
 

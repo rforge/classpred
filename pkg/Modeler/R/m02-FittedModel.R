@@ -11,7 +11,8 @@ setClass("FittedModel",
                         trainData="matrix",
                         trainStatus="numericOrFactor",
                         details="list",
-                        extras="list"))
+                        extras="list",
+                        fsVector = "logical"))
 
 ## Generates a FittedModel object
 FittedModel <- function(predict, data, status, details, ...) {
@@ -21,13 +22,17 @@ FittedModel <- function(predict, data, status, details, ...) {
         trainData=data,
         trainStatus=status,
         details=details,
-        extras=list(...))
+        extras=list(...),
+        fsVector=logical())
 }
 
 setMethod("predict", signature(object="FittedModel"),
           function(object,
                    newdata=object@trainData,
                    ...) {
+    if(nrow(newdata) > sum(object@fsVector)) {
+      newdata <- newdata[object@fsVector,]
+    }
     object@predictFunction(newdata=newdata,
                            object@details,
                            object@trainStatus,
