@@ -8,7 +8,7 @@ Learning models from data
   fit a binary classification model to a training data set.
 }
 \usage{
-learn(model, data, status, prune=NULL)
+learn(model, data, status, prune=keepAll)
 }
 \arguments{
   \item{model}{

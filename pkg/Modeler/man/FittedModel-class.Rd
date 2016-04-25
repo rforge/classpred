@@ -30,6 +30,9 @@ Objects can be created by calls to the constructor function,
     \item{\code{extras}:}{Object of class \code{"list"} containing any
       extra information (such as diagnostics) produced a a result of
       learning the model from the training data set.}
+    \item{\code{fsVector}:}{Logical vector indicating which features
+      should be retained (TRUE) of discared (FALSE) after performing
+      featgure selection on the training data.}
   }
 }
 \section{Methods}{

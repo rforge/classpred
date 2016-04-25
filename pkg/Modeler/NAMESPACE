@@ -13,6 +13,7 @@ import(randomForest)
 import(nnet)
 import(ClassComparison)
 import(ClassDiscovery)
+importFrom(oompaBase, "matrixMean", "matrixVar")
 
 ## various generics
 importMethodsFrom(ClassDiscovery, "predict")
