@@ -96,11 +96,12 @@ disco <- function(x, k=10, type=c("width", "freq")) {
   cutpts <- switch(type,
                    width = seq(min(x), max(x), length=k+1),
                    freq = quantile(x, seq(0, 1, by=1/k)))
+  cutpts <- sort(unique(cutpts)) # may be needed for frequency-based cuts
   cut(x, cutpts, include.lowest = TRUE, labels=FALSE)
 }
 
 discodata <- function(data, type=c("width", "freq")) {
-  k <- min(10, sqrt(ncol(data)))
+  k <- ceiling(min(10, sqrt(ncol(data))))
   t(apply(data, 1, disco, k=k, type=type))
 }
 

@@ -2,7 +2,8 @@
 
 learnNNET <- function(data, status, params, pfun) {
   tdata <- data.frame(Stat=status, t(data))
-  model <- nnet(Stat ~ ., data=tdata, size=params$size)
+  arglist <- c(list(formula = Stat ~ ., data=tdata),  params)
+  model <- do.call(nnet, arglist)
   FittedModel(pfun, data, status,
               details=list(model=model))
 }
