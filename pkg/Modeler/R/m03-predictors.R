@@ -22,10 +22,10 @@ learnLR <- function(data, status, params, pfun) {
 }
 
 predictLR <- function(newdata, details, status, type="response", ...) {
-  print(summary(status))
+#  print(summary(status))
   preds <- predict(details$model, newdata=data.frame(t(newdata)), type=type)
   if (is.factor(status)) {
-    cat("binarizing\n", file=stderr())
+#    cat("binarizing\n", file=stderr())
     values <- rep(levels(status)[2], length(preds))
     values[preds < details$prior] <- levels(status)[1]
     preds <- values
@@ -52,7 +52,7 @@ learnPCALR <- function(data, status, params, pfun) {
     params$perVar <- 0.8
   }
   if (is.null(params$verbose)) {
-    params$verbose=TRUE
+    params$verbose=FALSE
   }
   if (is.null(params$prior)) {
     params$prior <- 0.5
