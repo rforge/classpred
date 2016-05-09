@@ -4,6 +4,8 @@
 
 import(Modeler)
 
+importFrom("methods", "new")
+
 ## various generics
 importMethodsFrom(methods, "show")
 importMethodsFrom(oompaBase, "summary")
