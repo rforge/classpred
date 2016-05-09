@@ -14,6 +14,8 @@ import(nnet)
 import(ClassComparison)
 import(ClassDiscovery)
 importFrom(oompaBase, "matrixMean", "matrixVar")
+importFrom("stats", "binomial", "glm", "lm", "median", "quantile",
+           "step")
 
 ## various generics
 importMethodsFrom(ClassDiscovery, "predict")
