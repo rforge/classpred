@@ -3,6 +3,8 @@ import(methods)
 import(ClassDiscovery)
 import(MASS)
 
+importFrom("stats", "runif", "var")
+
 importMethodsFrom(oompaBase,
                   "hist", "image", "plot")
 importMethodsFrom(oompaBase,
