@@ -11,11 +11,12 @@ import(TailRank)
 import(e1071)
 import(randomForest)
 import(nnet)
+import(neuralnet)
 import(ClassComparison)
 import(ClassDiscovery)
 importFrom(oompaBase, "matrixMean", "matrixVar")
 importFrom("stats", "binomial", "glm", "lm", "median", "quantile",
-           "step")
+           "step", "as.formula")
 
 ## various generics
 importMethodsFrom(ClassDiscovery, "predict")
@@ -50,5 +51,6 @@ export("modelerPCALR", "learnPCALR", "predictPCALR",
        "modelerCCP", "learnCCP", "predictCCP",
        "modelerRF", "learnRF", "predictRF",
        "modelerNNET", "learnNNET", "predictNNET",
+       "modelerNNET2", "learnNNET2", "predictNNET2",
        "modelerSVM", "learnSVM", "predictSVM"
        )

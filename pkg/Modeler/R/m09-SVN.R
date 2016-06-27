@@ -4,7 +4,8 @@
 
 learnSVM <- function(data, status, params, pfun) {
   tdata <- data.frame(Stat=status, t(data))
-  model <- svm(Stat ~ ., data=tdata)
+  arglist <- c(list(formula = Stat ~ ., data=tdata),  params)
+  model <- do.call(svm, arglist)
   FittedModel(pfun, data, status,
               details=list(model=model))
 }
