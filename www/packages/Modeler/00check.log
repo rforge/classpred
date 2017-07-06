@@ -1,0 +1,186 @@
+* using log directory 'C:/Users/Kevin/Desktop/RForge/classpred/pkg/Modeler.Rcheck'
+* using R version 3.4.0 (2017-04-21)
+* using platform: x86_64-w64-mingw32 (64-bit)
+* using session charset: ISO8859-1
+* using option '--as-cran'
+* checking for file 'Modeler/DESCRIPTION' ... OK
+* this is package 'Modeler' version '3.4.0'
+* checking CRAN incoming feasibility ... NOTE
+Maintainer: 'Kevin R. Coombes <krc@silicovore.com>'
+
+New submission
+
+Strong dependencies not in mainstream repositories:
+  ClassDiscovery, ClassComparison, oompaBase, TailRank
+
+The Date field is over a month old.
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking whether package 'Modeler' can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking 'build' directory ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking use of S3 registration ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking sizes of PDF files under 'inst/doc' ... OK
+* checking installed files from 'inst/doc' ... OK
+* checking files in 'vignettes' ... OK
+* checking examples ... NOTE
+Examples with CPU or elapsed time > 5s
+               user system elapsed
+learnTailRank 22.29   0.00   22.32
+learnLR       21.91   0.02   21.96
+* checking for unstated dependencies in 'tests' ... OK
+* checking tests ... OK
+  Running 't00-filter.R'
+  Comparing 't00-filter.Rout' to 't00-filter.Rout.save' ...9,10c9,10
+<    Mode   FALSE    TRUE 
+< logical     846     154 
+---
+>    Mode   FALSE    TRUE    NA's 
+> logical     846     154       0 
+12,13c12,13
+<    Mode   FALSE    TRUE 
+< logical     846     154 
+---
+>    Mode   FALSE    TRUE    NA's 
+> logical     846     154       0 
+17,18c17,18
+<    Mode   FALSE    TRUE 
+< logical     794     206 
+---
+>    Mode   FALSE    TRUE    NA's 
+> logical     794     206       0 
+22,23c22,23
+<    Mode   FALSE    TRUE 
+< logical     551     449 
+---
+>    Mode   FALSE    TRUE    NA's 
+> logical     551     449       0 
+  Running 't00-pruner.R'
+  Comparing 't00-pruner.Rout' to 't00-pruner.Rout.save' ...11,12c11,12
+<    Mode   FALSE    TRUE 
+< logical     875     125 
+---
+>    Mode   FALSE    TRUE    NA's 
+> logical     875     125       0 
+16,17c16,17
+<    Mode   FALSE    TRUE 
+< logical     750     250 
+---
+>    Mode   FALSE    TRUE    NA's 
+> logical     750     250       0 
+21,22c21,22
+<    Mode   FALSE    TRUE 
+< logical     900     100 
+---
+>    Mode   FALSE    TRUE    NA's 
+> logical     900     100       0 
+25,26c25,26
+<    Mode   FALSE    TRUE 
+< logical     891     109 
+---
+>    Mode   FALSE    TRUE    NA's 
+> logical     891     109       0 
+30,31c30,31
+<    Mode   FALSE    TRUE 
+< logical     900     100 
+---
+>    Mode   FALSE    TRUE    NA's 
+> logical     900     100       0 
+34,35c34,35
+<    Mode   FALSE    TRUE 
+< logical     893     107 
+---
+>    Mode   FALSE    TRUE    NA's 
+> logical     893     107       0 
+39,40c39,40
+<    Mode   FALSE    TRUE 
+< logical     964      36 
+---
+>    Mode   FALSE    TRUE    NA's 
+> logical     964      36       0 
+43,44c43,44
+<    Mode   FALSE    TRUE 
+< logical     964      36 
+---
+>    Mode   FALSE    TRUE    NA's 
+> logical     964      36       0 
+48,49c48,49
+<    Mode   FALSE    TRUE 
+< logical     824     176 
+---
+>    Mode   FALSE    TRUE    NA's 
+> logical     824     176       0 
+52,53c52,53
+<    Mode   FALSE    TRUE 
+< logical     900     100 
+---
+>    Mode   FALSE    TRUE    NA's 
+> logical     900     100       0 
+57,58c57,58
+<    Mode   FALSE    TRUE 
+< logical     900     100 
+---
+>    Mode   FALSE    TRUE    NA's 
+> logical     900     100       0 
+61,62c61,62
+<    Mode   FALSE    TRUE 
+< logical     900     100 
+---
+>    Mode   FALSE    TRUE    NA's 
+> logical     900     100       0 
+65,66c65,66
+<    Mode   FALSE    TRUE 
+< logical     900     100 
+---
+>    Mode   FALSE    TRUE    NA's 
+> logical     900     100       0 
+70,71c70,71
+<    Mode   FALSE    TRUE 
+< logical     900     100 
+---
+>    Mode   FALSE    TRUE    NA's 
+> logical     900     100       0 
+75,76c75,76
+<    Mode   FALSE    TRUE 
+< logical     997       3 
+---
+>    Mode   FALSE    TRUE    NA's 
+> logical     997       3       0 
+* checking for unstated dependencies in vignettes ... OK
+* checking package vignettes in 'inst/doc' ... OK
+* checking re-building of vignette outputs ... OK
+* checking PDF version of manual ... OK
+* DONE
+Status: 2 NOTEs
