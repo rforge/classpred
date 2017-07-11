@@ -22,7 +22,6 @@
 
 \title{Bimodality Index}
 \author{Kevin R. Coombes}
-\date{19 February 2014}
 
 \begin{document}
 
@@ -41,16 +40,66 @@ options(SweaveHooks = list(fig = function() par(bg='white')))
 We simulate a dataset.
 <<simdata>>=
 set.seed(564684)
-nSamples <- 30
+nSamples <- 60
 nGenes <- 3000
 dataset <- matrix(rnorm(nSamples*nGenes), ncol=nSamples, nrow=nGenes)
 dimnames(dataset) <- list(paste("G", 1:nGenes, sep=''),
                           paste("S", 1:nSamples, sep=''))
 @ 
+At present, this dataset has no interesting structure; all genes have
+their expression patterns drawn from a common normal distribution. So,
+we shift the means by three standard deviations for half the samples
+for the first 100 genes.
+<<shift>>=
+dataset[1:100, 1:30] <- dataset[1:100, 1:30] + 3
+@ 
 
+\section{Computing te Bimodal Index}
+In order to compute the bimodal index from Wang et al. (2009)
+\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2730180}, we must
+load the package.
 <<lib>>=
 library(BimodalIndex)
 @ 
+
+Now we call the basic function:
+<<bim>>=
+bim <- bimodalIndex(dataset)
+summary(bim)
+@ 
+Here we see a suggestion that at least some of the values are likely
+to be above a reasonable cutoff to be called significant.
+
+\begin{figure}
+<<fig=TRUE>>=
+plot(bim$BI, col=rep(c("red", "black"), times=c(100, 2900)),
+     xlab="Gene", ylab="Bimodal Index")
+@ 
+\caption{Scatter plot of the bimodal indices of all genes.}
+\label{pltobi}
+\end{figure}
+Next, we plot the results, with the known bimodal genes colored red
+(Figure~\ref{plotbi}).  As expected, most (but not all) of the large
+BI values arise from the known bimodal genes.  We can then use the
+simulations from the null model to estimate reasonable significance
+cutoffs when using 60 samples.
+<<extra>>=
+summary(bim$BI[101:3000])
+cutoffs <- quantile(bim$BI[101:3000], probs=c(0.90, 0.95, 0.99))
+cutoffs
+@ 
+
+Now we can assess the sensitivity of the test when using the derived cutoffs.
+<<sensitivity>>=
+sapply(cutoffs, function(x) sum(bim$BI[1:100] > x))
+@ 
+With real data, of course, we would need to determine the signficance
+by simulating a large number of genes from the null model, using the
+simulations to compute empirical p-values. Because these p-values
+would still be computed one gene at a time, it would be advisable to
+incorporate a multiple testing crierion by, for example, estimating
+the false discovery rate.
+
 \section{Appendix}
 
 This analysis was performed in the following directory:

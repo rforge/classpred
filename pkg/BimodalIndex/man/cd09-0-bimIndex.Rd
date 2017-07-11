@@ -44,14 +44,17 @@ bimodalIndex(dataset, verbose=TRUE)
   In the paper by Wang et al. referenced below, we provide a statistical
   justification for the definition of the bimodality index, based on
   considerations of power and sample size.  Theoretical considerations
-  suggest that a bimodality index of 1.1 or greater is likely to
-  indicate a "useful" bimodal pattern of expression.  We carried out
-  simulation studies and applied the method to real data from a lung
-  cancer gene expression profiling study. Our findings suggest that BIC
-  behaves like a lax cutoff based on the bimodality index (much smaller
-  than 1), and that the bimodality index provides an objective measure
-  to identify and rank meaningful and reliable bimodal patterns from
-  large-scale gene expression datasets.
+  suggest that, in the limit over the number of samples, a bimodality
+  index of 1.1 or greater is likely to indicate a "useful" bimodal
+  pattern of expression.  Higher cutoffs are needed when there are
+  relatively few samples, and can be chosen by simulating from the null
+  distribution.  We carried out simulation studies and applied
+  the method to real data from a lung cancer gene expression profiling
+  study. Our findings suggest that BIC behaves like a lax cutoff based
+  on the bimodality index (much smaller than 1), and that the bimodality
+  index provides an objective measure to identify and rank meaningful
+  and reliable bimodal patterns from large-scale gene expression
+  datasets.
 
 }
 \value{
