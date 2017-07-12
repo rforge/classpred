@@ -54,7 +54,7 @@ for the first 100 genes.
 dataset[1:100, 1:30] <- dataset[1:100, 1:30] + 3
 @ 
 
-\section{Computing te Bimodal Index}
+\section{Computing the Bimodal Index}
 In order to compute the bimodal index from Wang et al. (2009)
 \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2730180}, we must
 load the package.
@@ -93,7 +93,7 @@ Now we can assess the sensitivity of the test when using the derived cutoffs.
 <<sensitivity>>=
 sapply(cutoffs, function(x) sum(bim$BI[1:100] > x))
 @ 
-With real data, of course, we would need to determine the signficance
+With real data, of course, we would need to determine the significance
 by simulating a large number of genes from the null model, using the
 simulations to compute empirical p-values. Because these p-values
 would still be computed one gene at a time, it would be advisable to
