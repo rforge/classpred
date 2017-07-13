@@ -30,7 +30,7 @@ filterIQR(cutoff)
 \details{
   Following the usual conventions introduced from the world of
   gene expression microarrays, a typical data matrix is constructed from
-  columns reporesenting samples on which we want to make predictions
+  columns representing samples on which we want to make predictions
   amd rows representing the features used to construct the predictive
   model. In this context, we define a \emph{filter} to be a function
   that accepts a data matrix as its only argument and returns a logical
@@ -43,19 +43,20 @@ filterIQR(cutoff)
   whose arguments are the parameters that pick out the desired member
   of the family.  The return value is an instantiation of a particular
   filtering function.  The decison to define things this way is to be
-  able to apply the methods in cross-validaiton (or other) loops where
+  able to apply the methods in cross-validation (or other) loops where
   we want to ensure that we use the same filtering rule each time.
 }
 \value{
   Each of the seven functions described here return a filter function,
-  \code{f}, that can be used by \code{logicalVector <- filter(data)}.
+  \code{f}, that can be used by code that basically looks like
+  \code{logicalVector <- filter(data)}.
 }
 \author{
   Kevin R. Coombes <krc@silicovore.com>
 }
 \seealso{
   See \code{\link{Modeler-class}} and \code{\link{Modeler}} for details
-  about how to perform cross-validation.
+  about how to train and test models.
 }
 \examples{
 set.seed(246391)

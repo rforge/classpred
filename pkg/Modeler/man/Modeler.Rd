@@ -36,11 +36,10 @@ Modeler(learn, predict, ...)
   the false discovery rate (\code{alpha}) used to select features and
   the percentage of variance (\code{perVar}) that should be explained by
   the number of principal components created from those features.  All
-  adeditional parameters should be suplied as named arguments to the
-  \code{Modeler} constructor; these addityional parameters will be
+  additional parameters should be suplied as named arguments to the
+  \code{Modeler} constructor; these additional parameters will be
   bundled into a list and inserted into the \code{params} slot of the
-  resulting object of the \code{\link{Modeler-class}}.  The examples
-  illustrate how to do this for three different kinds of classifiers.
+  resulting object of the \code{\link{Modeler-class}}.
 }
 \value{
   Returns an object of the \code{\link{Modeler-class}}.
@@ -61,7 +60,10 @@ Modeler(learn, predict, ...)
   
 }
 \examples{
-# not yet
+learnNNET
+predictNNET
+modelerNNET <- Modeler(learnNNET, predictNNET, size=5)
+modelerNNET
 }
 \keyword{ classif }
 \keyword{ multivariate }

@@ -71,7 +71,7 @@ fsTailRank(specificity=0.9, tolerance=0.5, confidence=0.5)
 \details{
   Following the usual conventions introduced from the world of
   gene expression microarrays, a typical data matrix is constructed from
-  columns reporesenting samples on which we want to make predictions
+  columns representing samples on which we want to make predictions
   amd rows representing the features used to construct the predictive
   model. In this context, we define a \emph{feature selector} or
   \emph{pruner} to be a function that accepts a data matrix and a
@@ -86,15 +86,43 @@ fsTailRank(specificity=0.9, tolerance=0.5, confidence=0.5)
   in cross-validaiton (or other) loops where we want to ensure that we
   use the same feature selection rule each time.
 
-  TODO: Describe teh various algorithms.
+  We have implemented the following algorithms:
+  \itemize{
+    \item \code{keepAll}: retain all features; do nothing.
+    \item \code{fsTtest}: Keep features based on the false discovery rate
+    from a two-goup t-test, but always retain a specified minimum number
+    of genes.
+    \item \code{fsModifiedFisher} Retain the top quantile of features
+    for the statistic \deqn{\frac{(m_A - m)^2 + (m_B - m)^2}{v_A + v_B}}
+    where m is the mean and v is the variance.
+    \item \code{fsPearson}: Retain the top quantile of features based on
+    the absolute value of the Pearson correlation with the binary outcome.
+    \item \code{fsSpearman}: Retain the top quantile of features based on
+    the absolute value of the Spearman correlation with the binary outcome.
+    \item \code{fsMedSplitOddsRatio}: Retain the top quantile of
+    features based on the odds ratio to predict the binary outcome,
+    after first dichotomizing the continuous predictor using a split at
+    the median value. 
+    \item \code{fsChisquared}: retain the top quantile of features based
+    on a chi-squared test comparing the binary outcome to continous
+    predictors discretized into ten bins.
+    \item \code{fsEntropy}: retain the top quantile of features based on
+    one of three information-theoretic measures of entropy. 
+    \item \code{fsFisherRandomForest}: retain the top features based on
+    their importance in a random forest analysis, after first filtering
+    using the modified Fisher statistic. 
+    \item \code{fsTailRank}: Retain features that are significant based
+    on the TailRank test, which is a measure of whether the tails of the
+    distributions are different.
+  }
 }
 \value{
   The \code{keepAll} function is a "pruner"; it takes the data matrix and
   grouping factor as arguments, and returns a logical vector indicating
-  which featres to retain.
+  which features to retain.
   
   Each of the other nine functions described here return uses its
-  arguments to contruyct and return a pruning function,
+  arguments to contruct and return a pruning function,
   \code{f}, that has the same interface as \code{keepAll}.
 }
 \author{
@@ -102,7 +130,7 @@ fsTailRank(specificity=0.9, tolerance=0.5, confidence=0.5)
 }
 \seealso{
   See \code{\link{Modeler-class}} and \code{\link{Modeler}} for details
-  about how to perform cross-validation.
+  about how to train and test models.
 }
 \examples{
 set.seed(246391)

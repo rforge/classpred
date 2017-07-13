@@ -6,7 +6,7 @@
   Fit models and make predictions with a logistic regression classifier
 }
 \description{
-  These functions are used to apply the generic cross-validation
+  These functions are used to apply the generic train-and-test
   mechanism to a logistic regression (LR) classifier.
 }
 \usage{
@@ -27,7 +27,7 @@ predictLR(newdata, details, status, type ="response", ...)
 }
   \item{pfun}{
     The function used to make predictions on new data, using the
-    cross-validated classifier.  Should always be set to
+    trained classifier.  Should always be set to
     \code{predictLR}.
 }
   \item{newdata}{
@@ -46,7 +46,7 @@ predictLR(newdata, details, status, type ="response", ...)
 }
 \details{
   The input arguments to both \code{learnLR} and \code{predictLR}
-  are dictated by the requirements of the general cross-validation
+  are dictated by the requirements of the general train-and-test
   mechanism provided by the \code{\link{Modeler-class}}.
   
   The LR classifier is similar in spirit to the "supervised principal
@@ -105,11 +105,12 @@ predictLR(newdata, details, status, type ="response", ...)
 }
 \seealso{
   See \code{\link{Modeler-class}} and \code{\link{Modeler}} for details
-  about how to peform cross-validation.  See
+  about how to train and test models.  See
   \code{\link{FittedModel-class}} and \code{\link{FittedModel}} for
   details about the structure of the object returned by \code{learnLR}.
 }
 \examples{
+\dontrun{
 # simulate some data
 data <- matrix(rnorm(100*20), ncol=20)
 status <- factor(rep(c("A", "B"), each=10))
@@ -117,12 +118,13 @@ status <- factor(rep(c("A", "B"), each=10))
 # set up the parameter list
 lr.params <- list(minNgenes=10, alpha=0.10, perVar=0.80, prior=0.5)
 
-# learn the model
+# learn the model -- this is slow
 fm <- learnLR(data, status, lr.params, predictLR)
 
 # Make predictions on some new simulated data
 newdata <- matrix(rnorm(100*30), ncol=30)
 predictLR(newdata, fm@details, status)
+}
 }
 \keyword{ classif }
 \keyword{ multivariate }

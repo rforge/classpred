@@ -1,6 +1,6 @@
 
-R version 3.2.0 (2015-04-16) -- "Full of Ingredients"
-Copyright (C) 2015 The R Foundation for Statistical Computing
+R version 3.4.0 (2017-04-21) -- "You Stupid Darkness"
+Copyright (C) 2017 The R Foundation for Statistical Computing
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -25,21 +25,21 @@ Loading required package: ClassComparison
 > 
 > fm <- filterMean(0.2)
 > summary(fm(data))
-   Mode   FALSE    TRUE    NA's 
-logical     846     154       0 
+   Mode   FALSE    TRUE 
+logical     846     154 
 > summary(fm(as.data.frame(data)))
-   Mode   FALSE    TRUE    NA's 
-logical     846     154       0 
+   Mode   FALSE    TRUE 
+logical     846     154 
 > 
 > fd <- filterMedian(0.2)
 > summary(fd(data))
-   Mode   FALSE    TRUE    NA's 
-logical     794     206       0 
+   Mode   FALSE    TRUE 
+logical     794     206 
 > 
 > fs <- filterSD(1)
 > summary(fs(data))
-   Mode   FALSE    TRUE    NA's 
-logical     551     449       0 
+   Mode   FALSE    TRUE 
+logical     551     449 
 > 
 > fr <- filterRange(3)
 > fx <- filterMax(2)
@@ -70,4 +70,4 @@ Error in apply(data, 1, max, na.rm = TRUE) :
 > 
 > proc.time()
    user  system elapsed 
-   0.74    0.01    0.76 
+   1.66    0.24    1.90 

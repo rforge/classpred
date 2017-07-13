@@ -6,7 +6,7 @@
   Fit models and make predictions with a PCA-LR classifier
 }
 \description{
-  These functions are used to apply the generic cross-validation
+  These functions are used to apply the generic train-and-test
   mechanism to a classifier that combines principal component analysis
   (PCA) with logistic regression (LR). 
 }
@@ -28,7 +28,7 @@ predictTailRank(newdata, details, status, ...)
 }
   \item{pfun}{
     The function used to make predictions on new data, using the
-    cross-validated classifier.  Should always be set to
+    trained classifier.  Should always be set to
     \code{predictTailRank}.
 }
   \item{newdata}{
@@ -44,7 +44,7 @@ predictTailRank(newdata, details, status, ...)
 }
 \details{
   The input arguments to both \code{learnTailRank} and \code{predictTailRank}
-  are dictated by the requirements of the general cross-validation
+  are dictated by the requirements of the general train-and-test
   mechanism provided by the \code{\link{Modeler-class}}.
   
   The TailRank classifier is similar in spirit to the "supervised principal
@@ -103,11 +103,12 @@ predictTailRank(newdata, details, status, ...)
 }
 \seealso{
   See \code{\link{Modeler-class}} and \code{\link{Modeler}} for details
-  about how to peform cross-validation.  See
+  about how to train and test models.  See
   \code{\link{FittedModel-class}} and \code{\link{FittedModel}} for
   details about the structure of the object returned by \code{learnTailRank}.
 }
 \examples{
+\dontrun{
 # simulate some data
 data <- matrix(rnorm(100*20), ncol=20)
 status <- factor(rep(c("A", "B"), each=10))
@@ -115,12 +116,13 @@ status <- factor(rep(c("A", "B"), each=10))
 # set up the parameter list
 tr.params <- list(minNgenes=10, alpha=0.10, perVar=0.80, prior=0.5)
 
-# learn the model
+# learn the model -- this is slow
 fm <- learnTailRank(data, status, tr.params, predictTailRank)
 
 # Make predictions on some new simulated data
 newdata <- matrix(rnorm(100*30), ncol=30)
 predictTailRank(newdata, fm@details, status)
+}
 }
 \keyword{ classif }
 \keyword{ multivariate }

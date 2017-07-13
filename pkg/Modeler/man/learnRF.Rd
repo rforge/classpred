@@ -6,7 +6,7 @@
   Fit models and make predictions with a PCA-LR classifier
 }
 \description{
-  These functions are used to apply the generic cross-validation
+  These functions are used to apply the generic train-and-test
   mechanism to a classifier that combines principal component analysis
   (PCA) with logistic regression (LR). 
 }
@@ -28,7 +28,7 @@ predictRF(newdata, details, status, ...)
 }
   \item{pfun}{
     The function used to make predictions on new data, using the
-    cross-validated classifier.  Should always be set to
+    trained classifier.  Should always be set to
     \code{predictRF}.
 }
   \item{newdata}{
@@ -44,7 +44,7 @@ predictRF(newdata, details, status, ...)
 }
 \details{
   The input arguments to both \code{learnRF} and \code{predictRF}
-  are dictated by the requirements of the general cross-validation
+  are dictated by the requirements of the general train-and-test
   mechanism provided by the \code{\link{Modeler-class}}.
   
   The RF classifier is similar in spirit to the "supervised principal
@@ -103,7 +103,7 @@ predictRF(newdata, details, status, ...)
 }
 \seealso{
   See \code{\link{Modeler-class}} and \code{\link{Modeler}} for details
-  about how to peform cross-validation.  See
+  about how to train and test models.  See
   \code{\link{FittedModel-class}} and \code{\link{FittedModel}} for
   details about the structure of the object returned by \code{learnRF}.
 }

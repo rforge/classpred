@@ -26,12 +26,6 @@
 \author{
   Kevin R. Coombes \email{krc@silicovore.com}
 }
-\seealso{
-  The following classification methods have been adapted to use the
-  Modeler class: K nearest neighbors
-  (\code{\link{learnKNN}}), recursive partitioning and regression trees
-  (\code{\link{learnRPART}}), 
-}
 \keyword{package}
 \keyword{classif}
 \keyword{multivariate}

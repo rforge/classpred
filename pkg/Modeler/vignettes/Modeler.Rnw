@@ -198,7 +198,7 @@ hist(mtt)
 par(opar)
 @ 
 
-We then usae a beta-uniform-mixture (BUM) model to estimate the false
+We then use a beta-uniform-mixture (BUM) model to estimate the false
 discover rate (FDR).
 <<bum>>=
 bum <- Bum(mtt@p.values)

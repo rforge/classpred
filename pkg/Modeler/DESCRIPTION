@@ -1,16 +1,15 @@
 Package: Modeler
-Version: 3.4.0
-Date: 2016-06-26
+Version: 3.4.2
+Date: 2017-07-11
 Title: Classes and Methods for Training and Using Binary Prediction Models
 Author: Kevin R. Coombes
 Maintainer: Kevin R. Coombes <krc@silicovore.com>
 Depends: R (>= 2.10), ClassDiscovery, ClassComparison, oompaBase
 Imports: methods, stats, class, rpart, TailRank, e1071, randomForest, nnet, neuralnet
 Suggests: Biobase
-Description: The Modeler package defines classes and methods to learn
-  models and use them to predict binary outcomes.  These are generic
-  tools, but also include specific examples for some common
-  classifiers.
+Description:  Defines classes and methods to learn models and use them
+  to predict binary outcomes.  These are generic tools, but we also
+  include specific examples for many common classifiers.
 License: Apache License (== 2.0)
 LazyLoad: yes
 biocViews: Microarray, Clustering

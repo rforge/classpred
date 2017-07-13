@@ -4,34 +4,41 @@
 Creating FittedModel objects
 }
 \description{
-  need a description
+  Construct an object of the \code{\link{FittedModel-class}}.
 }
 \usage{
 FittedModel(predict, data, status, details, ...)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{predict}{
-%%     ~~Describe \code{predict} here~~
+A function that applies the model to predict outcomes on new test data.
 }
   \item{data}{
-%%     ~~Describe \code{data} here~~
+A matrix containing the training data.
 }
   \item{status}{
-%%     ~~Describe \code{status} here~~
+A vector containing the training outcomes, which should either be a
+binary-valued factor or a numeric vector of contiuous outcomes.
 }
   \item{details}{
-%%     ~~Describe \code{details} here~~
+A list of the fitted parameters for the specified model.
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+Any extra information that is produced while learning the model; these
+wil be saved in the \code{extras} slot of the \code{FittedModel} object.
 }
 }
 \details{
-Need some details.
+Most users will never need to use this function; instead, they will
+first use an existing object of the \code{\link{Modeler-class}}, 
+call the \code{\link{learn}} method of that object with the training data
+to obtain a \code{FittedModel} object, and then apply its
+\code{\link{predict}} method to test data.  Only people who want to
+implement the learn-predict interface for a new classification algorithm
+are likely to need to call this function directly.
 }
 \value{
-  Retuirns an object of the \code{\link{FittedModel-class}}.
+  Returns an object of the \code{\link{FittedModel-class}}.
 }
 \author{
   Kevin R. Coombes <krc@silicovore.com.
@@ -45,7 +52,8 @@ Need some details.
   about the kinds of objects produced by \code{\link{learn}}.
 }
 \examples{
-# right
+# see the examples for learn and predict and for specific
+# implementations of classifiers.
 }
 \keyword{ classif }
 \keyword{ multivariate }

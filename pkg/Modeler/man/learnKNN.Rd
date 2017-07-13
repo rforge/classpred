@@ -7,7 +7,7 @@
   Fit models and make predictions with a KNN classifier
 }
 \description{
-  These functions are used to apply the generic cross-validation
+  These functions are used to apply the generic train-and-test
   mechanism to a K-nearest neighbors (KNN) classifier. 
 }
 \usage{
@@ -28,7 +28,7 @@ predictKNN(newdata, details, status, ...)
 }
   \item{pfun}{
     The function used to make predictions on new data, using the
-    cross-validated classifier.
+    trained classifier.
 }
   \item{newdata}{
     Another data matrix, with the same number of rows as \code{data}.
@@ -43,7 +43,7 @@ predictKNN(newdata, details, status, ...)
 }
 \details{
   The input arguments to both \code{learnKNN} and \code{predictKNN}
-  are dictated by the requirements of the general cross-validation
+  are dictated by the requirements of the general train-and-test
   mechanism provided by the \code{\link{Modeler-class}}.
   
   The implementation uses the \code{\link[class]{knn}} method from the
@@ -72,7 +72,7 @@ predictKNN(newdata, details, status, ...)
 }
 \seealso{
   See \code{\link{Modeler-class}} and \code{\link{Modeler}} for details
-  about how to peform cross-validation.  See
+  about how to train and test models.  See
   \code{\link{FittedModel-class}} and \code{\link{FittedModel}} for
   details about the structure of the object returned by \code{learnPCALR}.
 }
