@@ -20,7 +20,7 @@ setClass("CrossValidate",
 ##=============================================================================
 setClass("CrossValSummary",
          representation(call="call",
-                        parent="character",
+                        parent="CrossValidate",
                         trainAcc="list",
                         validAcc="list"))
 
@@ -107,7 +107,7 @@ setMethod("summary", signature(object="CrossValidate"),
                        object@nIterations)
     new("CrossValSummary",
         call=match.call(),
-        parent=deparse(substitute(object)),
+        parent=object,
         trainAcc=trainAcc,
         validAcc=validAcc)
 })
@@ -116,7 +116,7 @@ setMethod("summary", signature(object="CrossValidate"),
 ##-----------------------------------------------------------------------------
 setMethod("show", signature(object="CrossValSummary"),
          function(object) {
-    p <- eval(as.name(object@parent))
+    p <- object@parent
     temp <- paste("Cross-validation was performed using",
                   round(100*p@trainPercent, digits=1),
                   "percent of the data for training.",

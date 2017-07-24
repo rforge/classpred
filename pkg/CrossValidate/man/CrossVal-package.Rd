@@ -5,7 +5,7 @@
 \description{
   The \code{CrossValidate} package provides generic tools for performing
   cross-validation on classification methods in the context of high-throughput
-  data sets such as those produced by gene expression microarrays. In order to
+  data sets such as those produced by gene expression profiling. In order to
   use a classifier with this implementation of cross-validation, you must first
   prepare a pair of functions (one for learning models from training data, and
   one for making predictions on test data). These functions, along with any
@@ -74,10 +74,15 @@
   Stat Methods Med Res, 2008; \bold{17}:635--42.
 }
 \seealso{
-  The following classification methods have been adapted to work within
-  the general cross-validation framework: K nearest neighbors
+  The \code{\link{Modeler-package}} contains numerous classification
+  methods that have been adapted to work within this general
+  cross-validation framework, including: K nearest neighbors 
   (\code{\link{learnKNN}}), recursive partitioning and regression trees
-  (\code{\link{learnRPART}}), 
+  (\code{\link{learnRPART}}), random forests (\code{\link{learnRF}})
+  neural networks (\code{\link{learnNNET}}),   support vector machines
+  (\code{\link{learnSVM}}), compound covariate predictors
+  (\code{\link{learnCCP}}), and the TailRank test
+  (\code{\link{learnTailRank}}).
 }
 \keyword{package}
 \keyword{classif}

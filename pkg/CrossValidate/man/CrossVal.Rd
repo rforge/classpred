@@ -3,7 +3,7 @@
 \title{Creating CrossValidate objects}
 \description{
   Given a model classifier and a data set, this function performs
-  cross-valiadtion by repeatedly splitting the data into training and
+  cross-validation by repeatedly splitting the data into training and
   testing subsets in order to estimate the performance of this kind of
   classifer on new data.
 }
@@ -12,22 +12,27 @@ CrossValidate(model, data, status, frac, nLoop, verbose=TRUE)
 }
 \arguments{
   \item{model}{
-%%     ~~Describe \code{model} here~~
+An element of the \code{\link{Modeler}} class.
 }
   \item{data}{
-%%     ~~Describe \code{data} here~~
+A matrix containing the data to be used for cross-validation. As with
+most gene expression data, columns are the independent samples or
+observations and rows are the measured features.
 }
   \item{status}{
-%%     ~~Describe \code{status} here~~
+A binary-valued factor with the classes to be predicted.
 }
   \item{frac}{
-%%     ~~Describe \code{frac} here~~
+A number between 0 and 1; the fraction of the data that should be used
+in each iteration to train the model. 
 }
   \item{nLoop}{
-%%     ~~Describe \code{nLoop} here~~
+An integer; the number of times to split the data into training and test
+sets. 
 }
   \item{verbose}{
-%%     ~~Describe \code{verbose} here~~
+A logical value; should the cross-validation routine report interim
+progress.
 }
 }
 \details{
@@ -66,57 +71,12 @@ CrossValidate(model, data, status, frac, nLoop, verbose=TRUE)
   the object created by this function.
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function(model, data, status, frac, nLoop, verbose=TRUE) {
-  if (length(status) != ncol(data)) {
-    stop("The length of the status vector must match the size of the data set.")
-  }
-  
-  temp <- balancedSplit(status, frac) # just to compute sizes
-  nTrain <- sum(temp)
-  nTest <- sum(!temp)
-
-  # allocate space to hold the results
-  trainOutcome <- data.frame(matrix(NA, ncol=nLoop, nrow=nTrain))
-  validOutcome <- data.frame(matrix(NA, ncol=nLoop, nrow=nTest))
-  trainPredict <- data.frame(matrix(NA, ncol=nLoop, nrow=nTrain))
-  validPredict <- data.frame(matrix(NA, ncol=nLoop, nrow=nTest))
-  extras <- list()
-  
-  for (i in 1:nLoop) {
-    # show that we are still alive
-    if(verbose) print(i)
-    # split into training and test
-    tr <- balancedSplit(status, frac)
-    # record the true status for each split so we can get
-    # statistics on the performance later
-    trainOutcome[,i] <- status[tr]
-    validOutcome[,i] <- status[!tr]
-    # train the model
-    thisModel <- learn(model, data[,tr], status[tr])
-    # record anything interesting about the model
-    extras[[i]] <- thisModel@extras
-    # save the predictions on the training set
-    trainPredict[,i] <- predict(thisModel)
-    # now make the predictions using the logistic model
-    validPredict[,i] <- predict(thisModel, newdata=data[, !tr])
-  }
-  new("CrossValidate",
-      nIterations=nLoop,
-      trainPercent=frac,
-      outcome=status,
-      trainOutcome=trainOutcome,
-      validOutcome=validOutcome,
-      trainPredict=trainPredict,
-      validPredict=validPredict,
-      extras=extras)
-  }
+dataset <- matrix(rnorm(50*100), nrow=50)
+pseudoclass <- factor(rep(c("A", "B"), each=50))
+model <- modelerCCP # obviously, other models can be used
+numTimes <- 10 # and more is probably better
+cv <- CrossValidate(model, dataset, pseudoclass, 0.5, numTimes)
+summary(cv)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ classif }
+\keyword{ models }
