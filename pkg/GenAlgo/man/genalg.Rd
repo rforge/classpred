@@ -53,11 +53,6 @@ popDiversity(ga)
   Here diversity is defined by the number of alleles (selected features) that
   differ in two individuals.
 }
-\references{
-  Coombes KR.\cr
-  "Genetic Algorithms, Feature Selection, and the Tour de France."\cr
-  (Submitted)
-}
 \author{
   Kevin R. Coombes \email{krc@silicovore.com},
   P. Roebuck \email{proebuck@mdanderson.org}

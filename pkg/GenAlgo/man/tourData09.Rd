@@ -17,13 +17,9 @@ data(tourData09)
 \format{
 A data frame with 102 rows and 4 columns.
 }
-\source{
-  \url{http://www.versus.com/tdfgames}
-}
-\references{
-  Coombes KR.\cr
-  "Genetic Algorithms, Feature Selection, and the Tour de France."\cr
-  (Submitted)
+\source{ The data were collected in 2009 from the web site
+  \code{http://www.versus.com/tdfgames}, which appears to no longer
+  exist.
 }
 \keyword{datasets}
 

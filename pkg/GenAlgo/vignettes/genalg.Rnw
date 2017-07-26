@@ -116,7 +116,7 @@ To illustrate the use of the feature-selection genetic algorithm, we
 turn from the world of genes and proteins to the world of professional
 cycling.  As part of its coverage of the 2009 Tour de France, the
 Versus broadcasting network ran a ``fantasy cycling challenge'' on its
-web site at \url{http://www.versus.com/tdfgames}.  The (simplified)
+web site.  The (simplified for purposes of our example)
 rules of the challenge were to select nine riders for a fantasy team.
 Each player was given a fixed budget to work with; each rider ``cost''
 a certain amount to include on the fantasy team.  Players could change
@@ -475,7 +475,7 @@ $102$ riders who scored points in the 2009 tour challenge should
 almost never have more than one overlap.  At the point where we first
 reach the best solution, the average diversity falls to about $2$,
 showing that most pairs of solutions have seven riders in common.
-Howevre, the diversity is near $1.5$ during the period when the best
+However, the diversity is near $1.5$ during the period when the best
 solution temporarily drifts away from the optimum.  During the final
 phase, however, the diversity drops below $1.25$ and stays near that
 level, suggesting that this might provide a reasonable criterion for
@@ -498,7 +498,7 @@ The example presented here has some important implications for
 applying feature selection to develop gene expression signatures to
 predict useful clinical outcomes.  The most significant issues relate
 to the problem of convergence.  The cycling example is likely to be
-easier than the gen expression problem, since there are only $102$
+easier than the gene expression problem, since there are only $102$
 ``cycling-features'' (i.e., riders) while there may be several
 thousand gene-features.  In order to search adequately through the
 sample space, we needed a population of $1000$ individuals evolved

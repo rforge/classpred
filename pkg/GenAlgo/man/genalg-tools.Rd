@@ -67,11 +67,6 @@ selectionFitness(arow, context)
   value; in the simpler case, the value is guaranteed to be a 0 or 1.
   The \code{selectionFitness} function returns a real number.
 }
-\references{
-  Coombes KR.\cr
-  "Genetic Algorithms, Feature Selection, and the Tour de France."\cr
-  (Submitted)
-}
 \author{
   Kevin R. Coombes \email{krc@silicovore.com},
   P. Roebuck \email{proebuck@mdanderson.org}

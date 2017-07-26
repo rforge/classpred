@@ -24,10 +24,5 @@ data(gaTourResults)
   mean fitness.
 }
 \source{Kevin R. Coombes}
-\references{
-  Coombes KR.\cr
-  "Genetic Algorithms, Feature Selection, and the Tour de France."\cr
-  (Submitted)
-}
 \keyword{datasets}
 
