@@ -1,9 +1,26 @@
 			Dear Emacs, please make this -*-Text-*- mode!
 	**************************************************
 	*						 *
-	*	       2.2 SERIES NEWS			 *
+	*	       2.3 SERIES NEWS			 *
 	*						 *
 	**************************************************
+
+
+		CHANGES IN R VERSION 2.3.0
+
+CHANGES
+
+    o	Added an exta argument to the CrossValidate constructor to
+        include a feature selection algorithm within the loop.
+
+    o	Fleshed out the manual pages
+
+    o	Added a vignette
+
+BUG FIXES
+
+    o	Fixed a problem with the CrossValSummary class that caused it
+        to misbehave when used in the context of something like lapply.
 
 
 		CHANGES IN R VERSION 2.2.0

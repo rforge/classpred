@@ -1,4 +1,3 @@
-Add a proper vignette.
-
-Update the manual pages.
+Decide if we should support "lists" of gene filters or feature
+slectors instead of just one. 
 
