@@ -26,7 +26,8 @@ setClass("CrossValSummary",
 
 
 ##-----------------------------------------------------------------------------
-CrossValidate <- function(model, data, status, frac, nLoop, verbose=TRUE) {
+CrossValidate <- function(model, data, status, frac, nLoop,
+                          prune=keepAll, verbose=TRUE) {
     if (length(status) != ncol(data)) {
         stop("length of status vector must match the size of the data set.")
     }
@@ -54,7 +55,7 @@ CrossValidate <- function(model, data, status, frac, nLoop, verbose=TRUE) {
         trainOutcome[, i] <- status[tr]
         validOutcome[, i] <- status[!tr]
         ## Train the model
-        thisModel <- learn(model, data[, tr], status[tr])
+        thisModel <- learn(model, data[, tr], status[tr], prune)
         ## Record anything interesting about the model
         extras[[i]] <- thisModel@extras
         ## Save the predictions on the training set

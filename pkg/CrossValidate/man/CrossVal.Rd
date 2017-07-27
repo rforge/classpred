@@ -8,7 +8,7 @@
   classifer on new data.
 }
 \usage{
-CrossValidate(model, data, status, frac, nLoop, verbose=TRUE)
+CrossValidate(model, data, status, frac, nLoop, prune=keepAll, verbose=TRUE)
 }
 \arguments{
   \item{model}{
@@ -29,6 +29,11 @@ in each iteration to train the model.
   \item{nLoop}{
 An integer; the number of times to split the data into training and test
 sets. 
+}
+  \item{prune}{
+A function  that takes two inoputs, a data matrix and a factor with
+two levels, and rteturns a logical vector whose length equals the
+number of rows in the data matrix.
 }
   \item{verbose}{
 A logical value; should the cross-validation routine report interim
