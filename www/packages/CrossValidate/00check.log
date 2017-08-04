@@ -1,19 +1,16 @@
-* using log directory 'C:/Users/Kevin/Desktop/RForge/classpred/pkg/CrossValidate.Rcheck'
+* using log directory 'C:/Users/coom05/Desktop/rforge/classpred/pkg/CrossValidate.Rcheck'
 * using R version 3.4.0 (2017-04-21)
 * using platform: x86_64-w64-mingw32 (64-bit)
 * using session charset: ISO8859-1
 * using option '--as-cran'
 * checking for file 'CrossValidate/DESCRIPTION' ... OK
-* this is package 'CrossValidate' version '2.2.2'
-* checking CRAN incoming feasibility ... NOTE
+* this is package 'CrossValidate' version '2.3.1'
+* checking CRAN incoming feasibility ... WARNING
 Maintainer: 'Kevin R. Coombes <krc@silicovore.com>'
 
-New submission
+Insufficient package version (submitted: 2.3.1, existing: 2.3.1)
 
-Strong dependencies not in mainstream repositories:
-  Modeler, oompaBase
-
-The Date field is over a month old.
+Days since last update: 0
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
@@ -56,9 +53,13 @@ The Date field is over a month old.
 * checking installed files from 'inst/doc' ... OK
 * checking files in 'vignettes' ... OK
 * checking examples ... OK
+* checking for unstated dependencies in 'tests' ... OK
+* checking tests ... OK
+  Running 'testCV.R'
+  Comparing 'testCV.Rout' to 'testCV.Rout.save' ... OK
 * checking for unstated dependencies in vignettes ... OK
 * checking package vignettes in 'inst/doc' ... OK
 * checking re-building of vignette outputs ... OK
 * checking PDF version of manual ... OK
 * DONE
-Status: 1 NOTE
+Status: 1 WARNING
