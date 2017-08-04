@@ -57,9 +57,9 @@ The we invoke the cross-validation procedure.
 <<cv>>=
 cv <- CrossValidate(model, dataset, pseudoclass, frac = 0.6, nLoop = 30)
 @ 
-By default (\Rcode{verbose = TRUE}), the cross validation procedure
+By default (\texttt{verbose = TRUE}), the cross validation procedure
 prints out a counter for each iteration.  This behavior can be
-overridden by setting \Rcode{verbose = FALSE}.
+overridden by setting \texttt{verbose = FALSE}.
 <<summary>>=
 summary(cv)
 @ 
@@ -92,8 +92,8 @@ Having a common interface also lets us write code that combines the
 same modeling method with different algorothms to filter genes (by
 something like mean expression, for example) or to perform feature
 selection (using univariate t-tests, for example).  Many such methods
-are prvoided by the \Rpacakge{Modeler} package on which
-\Rpacakge{CrossValidate} depends. Here we show how to combine the KNN
+are prvoided by the \Rpackage{Modeler} package on which
+\Rpackage{CrossValidate} depends. Here we show how to combine the KNN
 method with several different methods to preprocess the set of
 features. 
 
