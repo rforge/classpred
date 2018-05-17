@@ -35,8 +35,7 @@ set.
 Kevin R. Coombes <krc@silicovore.com>
 }
 \seealso{
-  \code{\link{CrossValidate}}, \code{\link{CrossValidate-class}},
-  \code{\link{CrossValidate-package}}.
+  \code{\link{CrossValidate}}, \code{\link{CrossValidate-class}}.
 }
 \examples{
 nFeatures <- 40

@@ -7,22 +7,22 @@
 
 ##=============================================================================
 setClass("CrossValidate",
-         representation(nIterations="numeric",
-                        trainPercent="numeric",
-                        outcome="factor",
-                        trainOutcome="data.frame",
-                        trainPredict="data.frame",
-                        validOutcome="data.frame",
-                        validPredict="data.frame",
-                        extras="list"))
+         slots = c(nIterations="numeric",
+                   trainPercent="numeric",
+                   outcome="factor",
+                   trainOutcome="data.frame",
+                   trainPredict="data.frame",
+                   validOutcome="data.frame",
+                   validPredict="data.frame",
+                   extras="list"))
 
 
 ##=============================================================================
 setClass("CrossValSummary",
-         representation(call="call",
-                        parent="CrossValidate",
-                        trainAcc="list",
-                        validAcc="list"))
+         slots = c(call="call",
+                   parent="CrossValidate",
+                   trainAcc="list",
+                   validAcc="list"))
 
 
 ##-----------------------------------------------------------------------------

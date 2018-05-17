@@ -8,6 +8,12 @@
 
 		CHANGES IN R VERSION 2.3.0
 
+UPDATES
+
+    o	Removed use of deprecated or discouraged parts of S4 classes.
+
+		CHANGES IN R VERSION 2.3.0
+
 CHANGES
 
     o	Added an exta argument to the CrossValidate constructor to

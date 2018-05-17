@@ -1,6 +1,6 @@
 Package: CrossValidate
-Version: 2.3.1
-Date: 2017-08-04
+Version: 2.3.2
+Date: 2018-05-17
 Title: Classes and Methods for Cross Validation of "Class Prediction" Algorithms
 Author: Kevin R. Coombes
 Maintainer: Kevin R. Coombes <krc@silicovore.com>

@@ -61,17 +61,13 @@ progress.
   An object of the \code{\link{CrossValidate-class}}.
 }
 \references{
-  See the manual page for the \code{\link{CrossValidate-package}} for a list
+  See the manual page for the \code{\link{CrossValidate-class}} for a list
   of related references.
 }
 \author{
   Kevin R. Coombes \email{krcoombes@mdanderson.org}
 }
 \seealso{
-  See the manual page for the \code{\link{CrossValidate-package}} for a list
-  of classifiers that have been adapted to work with this
-  cross-validation mechanism.
-
   See \code{\link{CrossValidate-class}} for a description of the slots in
   the object created by this function.
 }
