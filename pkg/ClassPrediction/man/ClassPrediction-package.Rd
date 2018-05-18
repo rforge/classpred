@@ -13,9 +13,9 @@
   \tabular{ll}{
     Package: \tab ClassPrediction\cr
     Type: \tab Package\cr
-    Version: \tab 2.10.2\cr
-    Date: \tab 2012-05-01\cr
-    License: \tab Artistic-2.0\cr
+    Version: \tab 3.1.1\cr
+    Date: \tab 2016-05-09\cr
+    License: \tab Apache 2.0\cr
     LazyLoad: \tab yes\cr
   }
 }
