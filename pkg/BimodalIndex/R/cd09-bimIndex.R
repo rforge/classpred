@@ -10,7 +10,7 @@ bimodalIndex <- function(dataset, verbose=TRUE) {
     if (verbose && 0 == i%%1000) cat(paste("\n", 1 + i/1000, ' ', sep=''))
     x <- as.vector(as.matrix(dataset[i, ]))
     if (any(is.na(x))) next
-    mc <- Mclust(x, G = 2, modelNames = "E")
+    mc <- Mclust(x, G = 2, modelNames = "E", verbose = FALSE)
     sigma <- sqrt(mc$parameters$variance$sigmasq)
     delta <- abs(diff(mc$parameters$mean))/sigma
 #    pi <- max(mc$parameters$pro)
