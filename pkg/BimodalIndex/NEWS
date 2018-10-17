@@ -5,6 +5,15 @@
 	*						 *
 	**************************************************
 
+		CHANGES IN R VERSION 1.1.7
+
+MAINTENANCE
+
+    o	Made the internal call to Mclust non-verbose.
+    o	Created a (minimal) vignette.
+    o	Cleaned up test code.
+    o	Cleaned up "Suggests" and "Imports" lists.
+
 		CHANGES IN R VERSION 1.1.0
 
 BREAKING CHANGES
