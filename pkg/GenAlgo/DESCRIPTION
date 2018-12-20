@@ -1,6 +1,6 @@
 Package: GenAlgo
-Version: 2.1.5
-Date: 2018-10-16
+Version: 2.1.6
+Date: 2018-10-17
 Title: Classes and Methods to Use Genetic Algorithms for Feature Selection
 Author: Kevin R. Coombes
 Maintainer: Kevin R. Coombes <krc@silicovore.com>
