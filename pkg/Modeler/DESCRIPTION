@@ -1,6 +1,6 @@
 Package: Modeler
-Version: 3.4.3
-Date: 2018-05-17
+Version: 3.4.4
+Date: 2019-04-23
 Title: Classes and Methods for Training and Using Binary Prediction Models
 Author: Kevin R. Coombes
 Maintainer: Kevin R. Coombes <krc@silicovore.com>
