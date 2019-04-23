@@ -1,6 +1,6 @@
 
-R version 3.4.0 (2017-04-21) -- "You Stupid Darkness"
-Copyright (C) 2017 The R Foundation for Statistical Computing
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -17,6 +17,7 @@ Type 'q()' to quit R.
 
 > library(BimodalIndex)
 > # want to test the bimodal index method
+> RNGversion("3.5.3")
 > set.seed(632984) # for reproducibility
 > # start by generating a dataset with no bimodality
 > nGenes <- 500
@@ -177,4 +178,4 @@ Type 'q()' to quit R.
 > 
 > proc.time()
    user  system elapsed 
-   7.55    0.15    7.70 
+   4.52    0.03    4.55 

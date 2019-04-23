@@ -1,5 +1,6 @@
 library(BimodalIndex)
 # want to test the bimodal index method
+RNGversion("3.5.3")
 set.seed(632984) # for reproducibility
 # start by generating a dataset with no bimodality
 nGenes <- 500
