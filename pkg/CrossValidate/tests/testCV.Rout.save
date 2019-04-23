@@ -1,6 +1,6 @@
 
-R version 3.4.0 (2017-04-21) -- "You Stupid Darkness"
-Copyright (C) 2017 The R Foundation for Statistical Computing
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -22,6 +22,7 @@ Loading required package: cluster
 Loading required package: oompaBase
 Loading required package: ClassComparison
 > 
+> RNGversion("3.5.3")
 > set.seed(723461)
 > dataset <- matrix(rnorm(50*100), nrow=50)
 > pseudoclass <- factor(rep(c("A", "B"), each=50))
@@ -63,4 +64,4 @@ Max.    0.600 0.600 0.540 0.5384615 0.5416667
 > 
 > proc.time()
    user  system elapsed 
-   1.60    0.28    1.82 
+   0.87    0.14    1.09 

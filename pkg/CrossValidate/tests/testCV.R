@@ -1,5 +1,6 @@
 library(CrossValidate)
 
+RNGversion("3.5.3")
 set.seed(723461)
 dataset <- matrix(rnorm(50*100), nrow=50)
 pseudoclass <- factor(rep(c("A", "B"), each=50))
